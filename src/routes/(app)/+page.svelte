@@ -43,7 +43,7 @@
 
 <div class="container mx-auto px-6 py-16 flex flex-col items-center justify-center text-white">
 	{#each info as { title, content, route }, i (title)}
-		<div class="carousel-item {$currentIndex == i ? 'visible' : ''} text-center">
+		<div class="carousel-item text-center {$currentIndex == i ? 'visible' : ''}">
 			<h1 class="text-5xl font-bold transition-all">{title}</h1>
 			<p class="mt-4 text-xl transition-all">{content}</p>
 			<a
@@ -59,7 +59,7 @@
 	<div class="mt-4 flex space-x-2">
 		{#each info as _, i}
 			<button
-				class="w-2.5 h-2.5 bg-white rounded-full {$currentIndex == i ? 'animate-pulse' : ''}"
+				class="w-2.5 h-2.5 rounded-full {$currentIndex == i ? 'animate-pulse bg-white' : 'bg-gray-400'}"
 				on:click={(e) => changeIndex(i)}
 				aria-label="change view"
 			></button>
