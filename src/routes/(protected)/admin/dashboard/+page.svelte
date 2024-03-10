@@ -1,11 +1,12 @@
 <script lang="ts">
 	import type { PageData } from './$types';
+	import Content from '../../components/Content.svelte';
 
 	export let user: PageData;
 </script>
 
-<h1>Admin Dashboard</h1>
+<svelte:head>
+	<title>Admin Dashboard for PR WAVE Website</title>
+</svelte:head>
 
-<h2>{JSON.stringify(user)}</h2>
-
-<a href="/admin/logout">Logout</a>
+<Content title="Home" />

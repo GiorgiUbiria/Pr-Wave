@@ -41,6 +41,11 @@
   "dependencies": {
     "@supabase/ssr": "^0.1.0",
     "@supabase/supabase-js": "^2.39.7",
-    "@sveltejs/enhanced-img": "^0.1.8"
+    "@sveltejs/enhanced-img": "^0.1.8",
+    "bits-ui": "^0.19.5",
+    "clsx": "^2.1.0",
+    "lucide-svelte": "^0.354.0",
+    "tailwind-merge": "^2.2.1",
+    "tailwind-variants": "^0.2.0"
   }
 }
