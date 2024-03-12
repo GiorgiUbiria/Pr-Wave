@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { Table } from 'flowbite-svelte';
 	import { writable } from 'svelte/store';
 
 	export let title: string;

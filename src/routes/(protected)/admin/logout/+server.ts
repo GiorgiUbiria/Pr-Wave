@@ -1,6 +1,6 @@
 import { fail, redirect } from '@sveltejs/kit';
 
-export const GET = async (event: any) => {
+export const POST = async (event: any) => {
     const { locals: { supabase } } = event
 
     const userFetch = await supabase.auth.getUser();

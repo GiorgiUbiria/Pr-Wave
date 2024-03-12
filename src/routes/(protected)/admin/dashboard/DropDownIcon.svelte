@@ -58,8 +58,9 @@
 			<DropdownMenu.Item>API</DropdownMenu.Item>
 			<DropdownMenu.Separator />
 			<DropdownMenu.Item>
-                <!-- TODO: Fix the logout not working in this scenario -->
-				<a href="/admin/logout">Log out</a>
+				<form action="/admin/logout" method="POST">
+					<button type="submit">Log out</button>
+				</form>
 				<DropdownMenu.Shortcut>⇧⌘Q</DropdownMenu.Shortcut>
 			</DropdownMenu.Item>
 		</DropdownMenu.Content>

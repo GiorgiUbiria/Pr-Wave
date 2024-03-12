@@ -1,5 +1,8 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import type { User } from '@supabase/supabase-js';
+
+	export let user: User | undefined;
 </script>
 
 <nav
@@ -11,6 +14,13 @@
 		class="text-white text-2xl md:text-4xl font-bold">PR WAVE</a
 	>
 	<div class="flex space-x-4">
+		{#if user !== undefined}
+			<a
+				href="/admin/dashboard"
+				aria-current={$page.url.pathname === '/admin/dashboard'}
+				class="text-white hover:text-gray-300">DASHBOARD</a
+			>
+		{/if}
 		<a
 			href="/courses"
 			aria-current={$page.url.pathname === '/courses'}
