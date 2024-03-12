@@ -1,3 +1,5 @@
+export const prerender = true;
+
 import { fail } from "@sveltejs/kit";
 import type { PageServerLoad, Actions } from "./$types";
 import { redirect } from "@sveltejs/kit";

@@ -12,17 +12,17 @@ export const data = [
         link: '/admin/dashboard'
     },
     {
-        title: 'Status',
+        title: 'Services',
         icon: StatusIcon,
         link: '/admin/dashboard/status'
     },
     {
-        title: 'Archives',
+        title: 'Courses',
         icon: ArchivesIcon,
         link: '/admin/dashboard/archives'
     },
     {
-        title: 'Credits',
+        title: 'Users',
         icon: CreditsIcon,
         link: '/admin/dashboard/credits'
     },

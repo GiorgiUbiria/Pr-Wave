@@ -1,5 +1,5 @@
 import type { PageServerLoad } from "../$types";
-import { redirect } from "@sveltejs/kit";
+import { fail, redirect } from "@sveltejs/kit";
 
 export const load: PageServerLoad = async (event) => {
     const { locals: { supabase } } = event
@@ -9,8 +9,14 @@ export const load: PageServerLoad = async (event) => {
     if (!userFetch.data.user) {
         redirect(303, "/")
     } else {
-        return {
-            user: userFetch.data.user
+        const { data: userData, error } = await supabase.from("users").select()
+
+        if (error) {
+            return fail(403)
         }
+
+        const validResponse = { user: userFetch.data.user, users: userData }
+
+        return validResponse;
     }
 }
