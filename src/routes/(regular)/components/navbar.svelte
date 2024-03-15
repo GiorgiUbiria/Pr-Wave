@@ -62,30 +62,6 @@
 				{/if}
 				<li>
 					<a
-						href="/courses"
-						aria-current={$page.url.pathname === '/courses'}
-						on:click={toggleMenu}
-						class={$page.url.pathname === '/courses'
-							? 'block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500'
-							: 'block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'}
-					>
-						Courses
-					</a>
-				</li>
-				<li>
-					<a
-						href="/services"
-						aria-current={$page.url.pathname === '/services'}
-						on:click={toggleMenu}
-						class={$page.url.pathname === '/services'
-							? 'block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500'
-							: 'block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'}
-					>
-						Services
-					</a>
-				</li>
-				<li>
-					<a
 						href="/blogs"
 						aria-current={$page.url.pathname === '/blogs'}
 						on:click={toggleMenu}
@@ -106,6 +82,18 @@
 							: 'block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'}
 					>
 						About
+					</a>
+				</li>
+				<li>
+					<a
+						href="/contact_us"
+						aria-current={$page.url.pathname === '/contact_us'}
+						on:click={toggleMenu}
+						class={$page.url.pathname === '/contact_us'
+							? 'block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500'
+							: 'block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'}
+					>
+						Blogs
 					</a>
 				</li>
 			</ul>
