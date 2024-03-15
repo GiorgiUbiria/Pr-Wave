@@ -3,11 +3,6 @@
 		<p>Client Messages</p>
 	</div>
 	<div class="border-t solid border-gray-700 p-4 flex 2xl:items-start w-full hover:bg-gray-700">
-		<img
-			src="https://images.unsplash.com/photo-1533993192821-2cce3a8267d1?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTl8fHdvbWFuJTIwbW9kZXJufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"
-			alt="profile"
-			class="object-cover w-10 h-10 rounded-full"
-		/>
 		<div class="pl-4 w-full">
 			<div class="flex items-center justify-between w-full">
 				<div class="text-white font-medium">Mark</div>

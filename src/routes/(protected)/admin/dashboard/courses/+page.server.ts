@@ -1,16 +1,29 @@
 import type { PageServerLoad } from "../../$types";
-import { fail, redirect } from "@sveltejs/kit";
+import { fail } from "@sveltejs/kit";
 
-export const load: PageServerLoad = async (event) => {
-    const { locals: { supabase } } = event
+export const load: PageServerLoad = async ({ locals: { supabase } }) => {
+    async function getCoursesFromSupabase() {
+        try {
+            let { data: courses, error } = await supabase
+                .from('courses')
+                .select(`
+                    course_name,
+                    start_date,
+                    end_date,
+                    isactive
+              `)
 
-    const { data: courseData, error } = await supabase.from("courses").select()
+            if (error) {
+                throw (error)
+            }
 
-    if (error) {
-        return fail(403)
+            return courses
+        } catch (error) {
+            fail(403)
+        }
     }
 
-    const validResponse = { courses: courseData }
-
-    return validResponse;
+    return {
+        courses: await getCoursesFromSupabase()
+    }
 }

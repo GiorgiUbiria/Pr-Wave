@@ -1,16 +1,26 @@
 import type { PageServerLoad } from "../../$types";
-import { fail, redirect } from "@sveltejs/kit";
+import { fail } from "@sveltejs/kit";
 
-export const load: PageServerLoad = async (event) => {
-    const { locals: { supabase } } = event
+export const load: PageServerLoad = async ({ locals: { supabase } }) => {
+    async function getServicesFromSupabase() {
+        try {
+            let { data: services, error } = await supabase
+                .from('services')
+                .select(`
+            service_name,
+            isactive
+      `)
+            if (error) {
+                throw (error)
+            }
 
-    const { data: serviceData, error } = await supabase.from("services").select()
-
-    if (error) {
-        return fail(403)
+            return services
+        } catch (error) {
+            fail(403)
+        }
     }
 
-    const validResponse = { services: serviceData }
-
-    return validResponse;
+    return {
+        services: await getServicesFromSupabase()
+    }
 }
