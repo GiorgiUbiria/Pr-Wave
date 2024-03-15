@@ -35,5 +35,10 @@ export const data = [
         title: 'Documentation',
         icon: DocumentationIcon,
         link: '/admin/dashboard/documentation'
-    }
+    },
+    {
+        title: 'Site',
+        icon: DocumentationIcon,
+        link: '/'
+    },
 ];
