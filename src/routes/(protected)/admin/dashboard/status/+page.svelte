@@ -6,4 +6,4 @@
 	<title>Status</title>
 </svelte:head>
 
-<Content title="Status" />
+<Content title="Status" rows={new Array()} columns={new Array()} />

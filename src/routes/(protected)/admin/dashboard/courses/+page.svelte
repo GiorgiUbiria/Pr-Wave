@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Archives</title>
+	<title>Courses</title>
 </svelte:head>
 
-<Content title="Archives" />
+<Content title="Courses" rows={new Array()} columns={new Array()} />

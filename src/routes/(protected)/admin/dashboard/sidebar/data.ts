@@ -14,17 +14,17 @@ export const data = [
     {
         title: 'Services',
         icon: StatusIcon,
-        link: '/admin/dashboard/status'
+        link: '/admin/dashboard/services'
     },
     {
         title: 'Courses',
         icon: ArchivesIcon,
-        link: '/admin/dashboard/archives'
+        link: '/admin/dashboard/courses'
     },
     {
         title: 'Users',
         icon: CreditsIcon,
-        link: '/admin/dashboard/credits'
+        link: '/admin/dashboard/users'
     },
     {
         title: 'Settings',
@@ -32,9 +32,9 @@ export const data = [
         link: '/admin/dashboard/settings'
     },
     {
-        title: 'Documentation',
-        icon: DocumentationIcon,
-        link: '/admin/dashboard/documentation'
+        title: 'Status',
+        icon: StatusIcon,
+        link: '/admin/dashboard/status'
     },
     {
         title: 'Site',

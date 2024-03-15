@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Credits</title>
+	<title>Users</title>
 </svelte:head>
 
-<Content title="Credits" />
+<Content title="Users" rows={new Array()} columns={new Array()} />
