@@ -18,4 +18,4 @@
 	<title>Users</title>
 </svelte:head>
 
-<Content title="Home" {rows} {columns} />
+<Content title="Users" {rows} {columns} />
