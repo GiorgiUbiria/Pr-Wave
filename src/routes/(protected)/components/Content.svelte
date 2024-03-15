@@ -189,7 +189,6 @@
 				</li>
 			</ul>
 		</nav>
-
 	</div>
 
 	<div class="w-full mt-8 lg:mt-0 lg:w-4/12 lg:pl-4">
