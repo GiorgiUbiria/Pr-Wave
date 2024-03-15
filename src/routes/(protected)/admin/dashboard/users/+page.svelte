@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Content from '../../../components/Content.svelte';
-	import type { PageData } from '../$types';
+	import type { PageData } from './$types';
 
 	export let data: PageData;
 
