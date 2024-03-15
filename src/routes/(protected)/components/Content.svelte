@@ -1,17 +1,10 @@
 <script lang="ts">
-	import { writable } from 'svelte/store';
 	import Table from './table.svelte';
 	import AdditionalField from './additional_field.svelte';
 
 	export let title: string;
 	export let columns: any;
 	export let rows: any;
-
-	let view = writable('list');
-
-	function changeView() {
-		view.update((currentView) => (currentView === 'list' ? 'grid' : 'list'));
-	}
 
 	let currentDate = new Date();
 	let day = currentDate.getDate();
@@ -25,7 +18,13 @@
 			<p class="text-2xl font-bold">{title}</p>
 			<p class="">{day + '-' + month + '-' + year}</p>
 		</div>
-		<Table {rows} cols={columns} />
+		{#if title == 'Users' || title == 'Services' || title == 'Courses'}
+			<Table {rows} cols={columns} />
+		{:else}
+			<h1 class="text-3xl">
+				{title}
+			</h1>
+		{/if}
 	</div>
 
 	<div class="w-full mt-8 lg:mt-0 lg:w-4/12 lg:pl-4">
