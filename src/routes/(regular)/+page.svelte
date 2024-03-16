@@ -1,22 +1,27 @@
 <script lang="ts">
 	import { writable, get } from 'svelte/store';
+	import Autoplay from 'embla-carousel-autoplay';
+	import * as Carousel from '$lib/components/ui/carousel/index.js';
+	import type { CarouselAPI } from '$lib/components/ui/carousel/context.js';
+
+	import Card from './components/card.svelte';
 
 	const info = [
 		{
 			title: 'Exciting Courses',
 			content: 'Learn new, valuable things that will help you pave your path in this profession.',
-			route: '/courses'
+			route: '#courses'
 		},
 		{
 			title: 'Valuable Services',
 			content:
 				'Want to expand your business? Help people discover you? You are on a right path. We will help you achieve that.',
-			route: '/services'
+			route: '#services'
 		},
 		{
 			title: 'Interesting Blogs',
 			content: 'Read interesting blogs about everything.',
-			route: '/blogs'
+			route: '#blogs'
 		}
 	];
 
@@ -32,12 +37,25 @@
 		currentIndex.set(i);
 	}
 
-	setInterval(changeInfo, 5000);
+	setInterval(changeInfo, 50000);
 
 	$: if (get(currentIndex) === info.length - 1) {
 		setTimeout(() => {
 			currentIndex.set(0);
-		}, 500);
+		}, 5000);
+	}
+
+	let api: CarouselAPI;
+	let current = 0;
+	let count = 0;
+
+	$: if (api) {
+		count = api.scrollSnapList().length;
+		current = api.selectedScrollSnap() + 1;
+
+		api.on('select', () => {
+			current = api.selectedScrollSnap() + 1;
+		});
 	}
 </script>
 
@@ -59,13 +77,20 @@
 	<div class="mt-4 flex space-x-2">
 		{#each info as _, i}
 			<button
-				class="w-2.5 h-2.5 rounded-full {$currentIndex == i ? 'animate-pulse bg-white' : 'bg-gray-400'}"
+				class="w-2.5 h-2.5 rounded-full {$currentIndex == i
+					? 'animate-pulse bg-white'
+					: 'bg-gray-400'}"
 				on:click={(e) => changeIndex(i)}
 				aria-label="change view"
 			></button>
 		{/each}
 	</div>
-	<div class="py-8 flex flex-col container mx-auto px-6 md:grid md:grid-cols-2 gap-4">
+</div>
+
+<div class="flex justify-center w-screen py-4 pb-16 gap-x-16">
+	<div class="flex flex-col items-center w-4/12 border border-black">
+	</div>
+	<div class="flex flex-col items-center w-4/12 border border-black">
 	</div>
 </div>
 
