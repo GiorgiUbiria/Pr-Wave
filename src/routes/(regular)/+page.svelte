@@ -66,42 +66,6 @@
 		{/each}
 	</div>
 	<div class="py-8 flex flex-col container mx-auto px-6 md:grid md:grid-cols-2 gap-4">
-		<div class="flex flex-col gap-4">
-			<img
-				src="https://img.graphicsurf.com/2020/10/social-media-vector-flat-illustration.jpg"
-				alt="Social Media Marketing Illustration"
-				class="mx-auto"
-				width="500"
-				height="300"
-				style="aspect-ratio: 500 / 300; object-fit: cover;"
-			/>
-			<img
-				src="https://img.graphicsurf.com/2020/10/social-media-vector-flat-illustration.jpg"
-				alt="Social Media Marketing Illustration"
-				class="mx-auto"
-				width="500"
-				height="300"
-				style="aspect-ratio: 500 / 300; object-fit: cover;"
-			/>
-		</div>
-		<div class="flex flex-col gap-4">
-			<img
-				src="https://img.graphicsurf.com/2020/10/social-media-vector-flat-illustration.jpg"
-				alt="Social Media Marketing Illustration"
-				class="mx-auto"
-				width="500"
-				height="300"
-				style="aspect-ratio: 500 / 300; object-fit: cover;"
-			/>
-			<img
-				src="https://img.graphicsurf.com/2020/10/social-media-vector-flat-illustration.jpg"
-				alt="Social Media Marketing Illustration"
-				class="mx-auto"
-				width="500"
-				height="300"
-				style="aspect-ratio: 500 / 300; object-fit: cover;"
-			/>
-		</div>
 	</div>
 </div>
 
