@@ -7,6 +7,8 @@ export const load: PageServerLoad = async (event) => {
 
     const userFetch = await supabase.auth.getUser();
 
+    console.log(userFetch)
+
     if (userFetch.data.user) {
         redirect(303, "/admin/dashboard")
     }
