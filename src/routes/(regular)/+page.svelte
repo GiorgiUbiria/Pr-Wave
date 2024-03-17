@@ -71,7 +71,6 @@
 		{/each}
 	</div>
 </div>
-#course
 
 <Services />
 <Courses />
