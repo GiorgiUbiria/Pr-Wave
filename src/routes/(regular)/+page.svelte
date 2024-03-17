@@ -19,7 +19,7 @@
 		{
 			title: 'Interesting Blogs',
 			content: 'Read interesting blogs about everything.',
-			route: '#blogs'
+			route: '/blogs'
 		}
 	];
 
@@ -71,6 +71,7 @@
 		{/each}
 	</div>
 </div>
+#course
 
 <Services />
 <Courses />
