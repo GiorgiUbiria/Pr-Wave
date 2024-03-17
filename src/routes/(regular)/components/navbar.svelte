@@ -9,6 +9,8 @@
 	function toggleMenu() {
 		isOpen = !isOpen;
 	}
+
+    console.log(user)
 </script>
 
 <nav class="border-gray-200 dark:bg-gray-900">
