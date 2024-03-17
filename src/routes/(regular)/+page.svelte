@@ -1,10 +1,8 @@
 <script lang="ts">
 	import { writable, get } from 'svelte/store';
-	import Autoplay from 'embla-carousel-autoplay';
-	import * as Carousel from '$lib/components/ui/carousel/index.js';
-	import type { CarouselAPI } from '$lib/components/ui/carousel/context.js';
 
-	import Card from './components/card.svelte';
+    import Services from "./components/services.svelte"
+    import Courses from "./components/courses.svelte"
 
 	const info = [
 		{
@@ -44,19 +42,6 @@
 			currentIndex.set(0);
 		}, 5000);
 	}
-
-	let api: CarouselAPI;
-	let current = 0;
-	let count = 0;
-
-	$: if (api) {
-		count = api.scrollSnapList().length;
-		current = api.selectedScrollSnap() + 1;
-
-		api.on('select', () => {
-			current = api.selectedScrollSnap() + 1;
-		});
-	}
 </script>
 
 <div class="container mx-auto px-6 py-16 flex flex-col items-center justify-center text-white">
@@ -87,12 +72,8 @@
 	</div>
 </div>
 
-<div class="flex justify-center w-screen py-4 pb-16 gap-x-16">
-	<div class="flex flex-col items-center w-4/12 border border-black">
-	</div>
-	<div class="flex flex-col items-center w-4/12 border border-black">
-	</div>
-</div>
+<Services />
+<Courses />
 
 <style>
 	.carousel-item {
