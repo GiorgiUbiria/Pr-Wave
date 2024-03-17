@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { writable, get } from 'svelte/store';
 
-    import Services from "./components/services.svelte"
-    import Courses from "./components/courses.svelte"
+	import Services from './components/services.svelte';
+	import Courses from './components/courses.svelte';
 
 	const info = [
 		{

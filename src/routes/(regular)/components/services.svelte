@@ -1,4 +1,4 @@
-<section class="w-full py-12 bg-transparent text-white">
+<section id="services" class="w-full py-12 bg-transparent text-white">
   <div class="container grid items-center gap-8 px-4 text-center md:gap-16 md:px-6">
     <div>
       <h3 class="text-lg font-semibold tracking-wider md:text-base sh-3.5">Our Services</h3>
