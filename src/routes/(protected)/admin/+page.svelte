@@ -1,7 +1,3 @@
-<script lang="ts">
-	export let form: any;
-</script>
-
 <section class="max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md dark:bg-gray-800 place-self-center">
 	<h2 class="text-lg font-semibold text-gray-700 capitalize dark:text-white">Sign In</h2>
 
@@ -49,9 +45,3 @@
 		</div>
 	</form>
 </section>
-
-{#if form?.error}
-	<p class="error">{form.error}</p>
-{:else if form?.message}
-	<p class="success">{form.message}</p>
-{/if}

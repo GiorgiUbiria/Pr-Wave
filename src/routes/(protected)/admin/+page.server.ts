@@ -27,7 +27,6 @@ export const actions: Actions = {
             })
         }
 
-
         const { error } = await supabase.auth.signInWithPassword({
             email,
             password,
@@ -39,8 +38,6 @@ export const actions: Actions = {
             });
         }
 
-        return {
-            message: "success"
-        }
+        redirect(303, "/admin/dashboard")
     }
 }
