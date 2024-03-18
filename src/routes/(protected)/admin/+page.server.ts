@@ -8,7 +8,7 @@ export const load: PageServerLoad = async (event) => {
     const userFetch = await supabase.auth.getUser();
 
     if (userFetch.data.user) {
-        redirect(303, "/blogs")
+        redirect(303, "/course/1")
     }
 }
 

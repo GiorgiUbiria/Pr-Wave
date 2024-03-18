@@ -5,6 +5,6 @@ export const load: LayoutServerLoad = async ({ locals: { supabase } }) => {
     const userFetch = await supabase.auth.getUser();
 
     if (!userFetch.data.user) {
-        redirect(303, "/blogs")
+        redirect(303, "/about")
     }
 }
