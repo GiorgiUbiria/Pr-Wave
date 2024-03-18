@@ -7,7 +7,7 @@ export const load: PageServerLoad = async ({ locals: { supabase } }) => {
 
     if (userFetch.data.user) {
         console.log("User exists")
-        redirect(303, "/course/1")
+        redirect(303, "/admin/dashboard")
     }
 }
 
@@ -37,6 +37,6 @@ export const actions: Actions = {
             });
         }
 
-        redirect(303, "/blogs")
+        redirect(303, "/admin/dashboard")
     }
 }
