@@ -14,6 +14,6 @@ export const POST = async (event: any) => {
     if (error) {
         fail(401);
     } else {
-        redirect(302, "/")
+        redirect(303, "/")
     }
 };
