@@ -54,7 +54,7 @@
 							aria-current={$page.url.pathname === '/admin/dashboard'}
 							on:click={toggleMenu}
 						>
-							Dashboard {JSON.stringify(user)}
+							Dashboard
 						</a>
 					</li>
 				{/if}
