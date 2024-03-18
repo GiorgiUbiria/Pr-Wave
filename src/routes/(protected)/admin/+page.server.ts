@@ -1,13 +1,14 @@
 import { fail } from "@sveltejs/kit";
 import type { PageServerLoad, Actions } from "./$types";
 import { redirect } from "@sveltejs/kit";
+import { goto } from "$app/navigation";
 
 export const load: PageServerLoad = async ({ locals: { supabase } }) => {
     const userFetch = await supabase.auth.getUser();
 
     if (userFetch.data.user) {
-        console.log(userFetch.data.user)
-        redirect(303, "/course/1")
+        console.log("User exists")
+        goto("admin/dashboard")
     }
 }
 
