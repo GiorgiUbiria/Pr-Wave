@@ -69,7 +69,7 @@
 					</li>
 					<li class="mt-2 inline-block mr-2 md:block md:mr-0">
 						<a
-							href="instagram"
+							href="/"
 							class="no-underline hover:underline text-gray-800 hover:text-pink-500">Instagram</a
 						>
 					</li>
@@ -87,8 +87,8 @@
 						<a
 							href="/about_us"
 							class="no-underline hover:underline text-gray-800 hover:text-pink-500">About Us</a
-						>
-					</li>
+                        >
+                    </li>
 					<li class="mt-2 inline-block mr-2 md:block md:mr-0">
 						<a
 							href="/contact"
