@@ -9,6 +9,11 @@
 	export let data: LayoutData;
 </script>
 
+<svelte:head>
+	<title>PR WAVE</title>
+	<meta property="og:type" content="article" />
+</svelte:head>
+
 <div
 	class="leading-normal tracking-normal text-white gradient"
 	style="font-family: 'Source Sans Pro', sans-serif;"
