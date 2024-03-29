@@ -54,7 +54,7 @@
 							aria-current={$page.url.pathname === '/admin/dashboard'}
 							on:click={toggleMenu}
 						>
-							Dashboard
+							ადმინის პანელი
 						</a>
 					</li>
 				{/if}
@@ -67,7 +67,7 @@
 							? 'block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500'
 							: 'block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'}
 					>
-						Blogs
+						ბლოგი
 					</a>
 				</li>
 				<li>
@@ -79,7 +79,7 @@
 							? 'block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500'
 							: 'block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'}
 					>
-						About
+						ჩვენ შესახებ
 					</a>
 				</li>
 				<li>
@@ -91,7 +91,7 @@
 							? 'block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500'
 							: 'block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'}
 					>
-						Contact Us
+						კონტაქტი
 					</a>
 				</li>
 			</ul>

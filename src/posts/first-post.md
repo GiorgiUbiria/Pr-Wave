@@ -16,3 +16,10 @@ Hey friends! 👋
 function greet(name: string) {
 	console.log(`Hey ${name}! 👋`)
 }
+```
+
+```
+<div>
+    <a href="/"> Link </a>
+</div>
+```

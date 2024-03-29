@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Settings</title>
+	<title>პარამეტრები</title>
 </svelte:head>
 
 <Content title="Settings" rows={new Array()} columns={new Array()} />

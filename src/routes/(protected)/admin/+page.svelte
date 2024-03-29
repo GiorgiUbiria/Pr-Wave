@@ -1,10 +1,12 @@
-<section class="max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md dark:bg-gray-800 place-self-center">
-	<h2 class="text-lg font-semibold text-gray-700 capitalize dark:text-white">Sign In</h2>
+<section
+	class="max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md dark:bg-gray-800 place-self-center"
+>
+	<h2 class="text-lg font-semibold text-gray-700 capitalize dark:text-white">ადმინის პანელზე გადასასვლელად გაიარეთ ავტორიზაცია</h2>
 
 	<form method="POST">
 		<div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
 			<div>
-				<label class="text-gray-700 dark:text-gray-200" for="email">Email Address</label>
+				<label class="text-gray-700 dark:text-gray-200" for="email">მეილი</label>
 				<input
 					id="email"
 					name="email"
@@ -14,7 +16,7 @@
 			</div>
 
 			<div>
-				<label class="text-gray-700 dark:text-gray-200" for="password">Password</label>
+				<label class="text-gray-700 dark:text-gray-200" for="password">პაროლი</label>
 				<input
 					id="password"
 					name="password"
@@ -25,7 +27,7 @@
 
 			<div>
 				<label class="text-gray-700 dark:text-gray-200" for="passwordConfirmation"
-					>Password Confirmation</label
+					>პაროლის დამოწმება</label
 				>
 				<input
 					id="passwordConfirmation"
@@ -40,7 +42,7 @@
 			<button
 				type="submit"
 				class="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
-				>Sign In</button
+				>შესვლა</button
 			>
 		</div>
 	</form>

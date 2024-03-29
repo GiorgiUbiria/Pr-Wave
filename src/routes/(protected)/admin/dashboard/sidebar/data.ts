@@ -7,37 +7,37 @@ import DocumentationIcon from './icons/DocumentationIcon.svelte';
 
 export const data = [
     {
-        title: 'Home',
+        title: 'სახლი',
         icon: HomeIcon,
         link: '/admin/dashboard'
     },
     {
-        title: 'Services',
+        title: 'სერვისები',
         icon: StatusIcon,
         link: '/admin/dashboard/services'
     },
     {
-        title: 'Courses',
+        title: 'კურსები',
         icon: ArchivesIcon,
         link: '/admin/dashboard/courses'
     },
     {
-        title: 'Users',
+        title: 'მომხმარებლები',
         icon: CreditsIcon,
         link: '/admin/dashboard/users'
     },
     {
-        title: 'Settings',
+        title: 'პარამეტრები',
         icon: SettingsIcon,
         link: '/admin/dashboard/settings'
     },
     {
-        title: 'Status',
+        title: 'სტატუსი',
         icon: StatusIcon,
         link: '/admin/dashboard/status'
     },
     {
-        title: 'Site',
+        title: 'მთავარი',
         icon: DocumentationIcon,
         link: '/'
     },

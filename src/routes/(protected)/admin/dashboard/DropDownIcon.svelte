@@ -15,11 +15,11 @@
 			</Button>
 		</DropdownMenu.Trigger>
 		<DropdownMenu.Content class="w-56">
-			<DropdownMenu.Label>LEILA BERDZENISHVILI</DropdownMenu.Label>
+			<DropdownMenu.Label>ლეილა ბერძენიშვილი</DropdownMenu.Label>
 			<DropdownMenu.Separator />
 			<DropdownMenu.Item>
 				<form action="/admin/logout" method="POST">
-					<button type="submit">Log out</button>
+					<button type="submit">გამოსვლა ანგარიშიდან</button>
 				</form>
 				<DropdownMenu.Shortcut>⇧⌘Q</DropdownMenu.Shortcut>
 			</DropdownMenu.Item>

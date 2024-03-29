@@ -5,17 +5,17 @@
 	export let data: PageData;
 
 	let columns = [
-		{ title: 'First Name', field: 'first_name' },
-		{ title: 'Last Name', field: 'last_name' },
-		{ title: 'Email', field: 'mail' },
-		{ title: 'Phone Number', field: 'phone_number' }
+		{ title: 'სახელი', field: 'first_name' },
+		{ title: 'გვარი', field: 'last_name' },
+		{ title: 'მეილი', field: 'mail' },
+		{ title: 'ტელეფონის ნომერი', field: 'phone_number' }
 	];
 
 	let rows = data.users;
 </script>
 
 <svelte:head>
-	<title>Users</title>
+	<title>მომხმარებლები</title>
 </svelte:head>
 
 <Content title="Users" {rows} {columns} />

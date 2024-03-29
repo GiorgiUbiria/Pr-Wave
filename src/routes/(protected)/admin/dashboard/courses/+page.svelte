@@ -5,17 +5,17 @@
 	export let data: PageData;
 
 	let columns = [
-		{ title: 'Course Name', field: 'course_name' },
-		{ title: 'Active', field: 'isactive' },
-		{ title: 'Start Date', field: 'start_date' },
-		{ title: 'End Date', field: 'end_date' }
+		{ title: 'კურსის სახელი', field: 'course_name' },
+		{ title: 'აქტიური', field: 'isactive' },
+		{ title: 'დაწყების თარიღი', field: 'start_date' },
+		{ title: 'დასრულების თარიღი', field: 'end_date' }
 	];
 
 	let rows = data.courses;
 </script>
 
 <svelte:head>
-	<title>Courses</title>
+	<title>კურსები</title>
 </svelte:head>
 
 <Content title="Courses" {rows} {columns} />

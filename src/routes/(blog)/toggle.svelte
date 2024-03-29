@@ -8,12 +8,12 @@
 	{#if $theme === 'dark'}
 		<div in:fly={{ y: 10 }}>
 			<Sun />
-			<span>Light</span>
+			<span>ნათელი</span>
 		</div>
 	{:else}
 		<div in:fly={{ y: -10 }}>
 			<Moon />
-			<span>Dark</span>
+			<span>ბნელი</span>
 		</div>
 	{/if}
 </button>

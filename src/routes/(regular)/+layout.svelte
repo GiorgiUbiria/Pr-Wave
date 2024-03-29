@@ -16,7 +16,7 @@
 
 <div
 	class="leading-normal tracking-normal text-white gradient"
-	style="font-family: 'Source Sans Pro', sans-serif;"
+	style="font-family: 'BPG Glaho', sans-serif;"
 >
 	<Nav user={data?.session?.user} />
 	<slot />
