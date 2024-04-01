@@ -1,0 +1,63 @@
+---
+import Layout from '../../layouts/Page.astro';
+import { createServerClient, type CookieOptions } from '@supabase/ssr';
+
+const supabase = createServerClient(
+	import.meta.env.PUBLIC_SUPABASE_URL,
+	import.meta.env.PUBLIC_SUPABASE_ANON_KEY,
+	{
+		cookies: {
+			get(key: string) {
+				return Astro.cookies.get(key)?.value;
+			},
+			set(key: string, value: string, options: CookieOptions) {
+				Astro.cookies.set(key, value, options);
+			},
+			remove(key: string, options) {
+				Astro.cookies.delete(key, options);
+			},
+		},
+	}
+);
+
+if (Astro.request.method === 'POST') {
+	try {
+		const data = await Astro.request.formData();
+		const email = data.get('email');
+		const password = data.get('password');
+
+		const { data: signInData, error: signInError } = await supabase.auth.signInWithPassword({
+            email: email as string,
+			password: password as string,
+		});
+
+        if (signInError) {
+            throw new Error("Error signing in.");
+        }
+
+        if (signInData) {
+            return Astro.redirect("/admin");
+        }
+	} catch (error) {
+		if (error instanceof Error) {
+			console.error(error.message);
+		}
+	}
+}
+
+const user = await supabase.auth.getUser();
+---
+
+<Layout>
+	<h1>{JSON.stringify(user.data)}</h1>
+
+	<form method="POST">
+		<label for="email">მეილი</label>
+		<input type="email" name="email" id="email" />
+
+		<label for="password">პაროლი</label>
+		<input type="password" name="password" id="password" />
+
+		<button>შესვლა</button>
+	</form>
+</Layout>

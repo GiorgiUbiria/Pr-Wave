@@ -1,0 +1,36 @@
+---
+import Layout from '../../layouts/Page.astro';
+import { createServerClient, type CookieOptions } from '@supabase/ssr';
+
+const supabase = createServerClient(
+	import.meta.env.PUBLIC_SUPABASE_URL,
+	import.meta.env.PUBLIC_SUPABASE_ANON_KEY,
+	{
+		cookies: {
+			get(key: string) {
+				return Astro.cookies.get(key)?.value;
+			},
+			set(key: string, value: string, options: CookieOptions) {
+				Astro.cookies.set(key, value, options);
+			},
+			remove(key: string, options) {
+				Astro.cookies.delete(key, options);
+			},
+		},
+	}
+);
+
+const {data: userData, error: userError} = await supabase.auth.getUser();
+
+if (userError) {
+    throw new Error(userError.message);
+}
+
+if (!userData) {
+    return Astro.redirect("/");
+}
+---
+
+<Layout>
+	<h1>Admin Panel</h1>
+</Layout>
