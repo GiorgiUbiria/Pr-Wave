@@ -8,6 +8,65 @@ import {
 import Layout from '../../layouts/Page.astro';
 import NewsletterForm from '../../components/forms/NewsletterForm.astro';
 
+import supabase from "../../config/supabase"
+import * as matter from 'gray-matter';
+
+const { data: files, error } = await supabase.storage
+ .from('blog_bucket')
+ .list();
+
+if (error) {
+ throw error;
+}
+
+if (!files || !files.length) {
+ throw new Error("No files to download");
+}
+
+const promises = [];
+
+files.forEach((file) => {
+ promises.push(
+    supabase.storage.from('blog_bucket').download(`${file.name}`)
+ );
+});
+
+const response = await Promise.allSettled(promises);
+
+const downloadedFiles = response.map((result, index) => {
+ if (result.status === "fulfilled") {
+    const content = result.value.data.toString('utf-8');
+    const { data: frontmatter } = matter(content);
+    return {
+      name: files[index].name,
+      content,
+      frontmatter,
+    };
+ }
+});
+
+const blogPosts = downloadedFiles.map((file) => {
+ if (file) {
+    return {
+      title: file.frontmatter.title,
+      description: file.frontmatter.description,
+      authors: file.frontmatter.authors,
+      publishDate: parse(
+        file.frontmatter.publishDate,
+        'MMMM d, yyyy',
+        new Date()
+      ),
+      featuredImage: file.frontmatter.featuredImage,
+      excerpt: file.frontmatter.excerpt,
+      href: `/posts/${file.name.replace(/\.mdx$/, '')}`,
+    };
+ }
+}).filter(Boolean).sort((a, b) => {
+ if (isBefore(a.publishDate, b.publishDate)) return 1;
+ if (isBefore(b.publishDate, a.publishDate)) return -1;
+ return 0;
+});
+
 const posts = await Astro.glob('./posts/*.mdx').then(posts =>
 	posts
 		.map(({ frontmatter, url }) => ({
@@ -49,7 +108,7 @@ const seo = {
 		</TextCardSection>
 		<section class="blog-posts-list__section">
 			<h2>უახლესი პოსტები</h2>
-			<BlogPostsList {posts} />
+			<BlogPostsList {blogPosts} />
 		</section>
 	</Container>
 </Layout>

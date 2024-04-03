@@ -29,6 +29,7 @@
   "dependencies": {
     "@astrojs/node": "^8.2.5",
     "@supabase/ssr": "^0.1.0",
-    "@supabase/supabase-js": "^2.41.1"
+    "@supabase/supabase-js": "^2.41.1",
+    "gray-matter": "^4.0.3"
   }
 }
