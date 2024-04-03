@@ -2,6 +2,7 @@
     "compilerOptions": {
         "experimentalDecorators": true,
         "useDefineForClassFields": false,
+        "allowSyntheticDefaultImports": true,
         "module": "es2020",
         "baseUrl": "src",
         "types": [
