@@ -6,24 +6,21 @@ import {
 	FormTextarea,
 } from '@components/odyssey-theme';
 
-const selectOptions = ['Google Search', 'Social Media', 'Email'];
+const selectOptions = ['გუგლი', 'სოციალური მედია', 'სხვა პირისგან'];
 ---
 
 <form name="Contact Form" method="POST" action="/contact-thank-you">
-	<FormInput type="text" label="Name" name="Name" placeholder="John Doe" />
+	<FormInput type="text" label="სახელი" name="Name" placeholder="John Doe" />
 	<FormInput
 		type="email"
-		label="Email"
+		label="მეილი"
 		name="Email"
-		placeholder="hello@example.com"
+		placeholder="template@example.com"
 	/>
-	<FormSelect label="How Did You Hear About Us?" options={selectOptions} />
-	<FormTextarea
-		label="Message"
-		name="Message"
-		placeholder="Your message here..."
+	<FormSelect label="როგორ გაიგეთ ჩვენ შესახებ?" options={selectOptions} />
+	<FormTextarea label="წერილი" name="Message" placeholder="თქვენი წერილი..."
 	/>
-	<Button>Submit</Button>
+	<Button>გაგზავნა</Button>
 </form>
 
 <style>
