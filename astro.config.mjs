@@ -5,6 +5,7 @@ import icon from "astro-icon";
 import lit from "@astrojs/lit";
 
 export default defineConfig({
-  sitemap: true,
-  integrations: [sitemap(), mdx(), lit(), icon()],
+    site: 'https://prwave.netlify.app',
+    sitemap: true,
+    integrations: [sitemap(), mdx(), lit(), icon()],
 });
