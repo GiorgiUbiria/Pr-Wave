@@ -5,6 +5,7 @@ import type { Props as BaseHeadProps } from '../components/head/BaseHead.astro';
 import Logo from '../components/Logo.astro';
 import settings from '../config/settings';
 import { footerLists, footerSocials } from '../config/footer';
+import FacebookChat from '../components/react/component';
 
 export interface Props {
 	seo?: BaseHeadProps;
@@ -20,12 +21,11 @@ const { seo } = Astro.props as Props;
 		<span slot="logo">
 			<Logo />
 		</span>
-		<Button slot="action-item" href="/getting-started"
-			>დაწყება</Button
-		>
+		<Button slot="action-item" href="/getting-started">დაწყება</Button>
 	</Header>
 	<div id="page">
 		<slot />
+		<FacebookChat />
 	</div>
 	<Footer
 		slot="footer"

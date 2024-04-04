@@ -3,9 +3,10 @@ import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
 import icon from "astro-icon";
 import lit from "@astrojs/lit";
+import react from "@astrojs/react";
 
 export default defineConfig({
     site: 'https://ornate-moonbeam-c5e191.netlify.app/',
     sitemap: true,
-    integrations: [sitemap(), mdx(), lit(), icon()],
+    integrations: [sitemap(), mdx(), lit(), icon(), react()],
 });
