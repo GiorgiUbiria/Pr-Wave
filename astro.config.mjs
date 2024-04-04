@@ -5,8 +5,7 @@ import icon from "astro-icon";
 import lit from "@astrojs/lit";
 
 export default defineConfig({
-  site: 'https://GiorgiUbiria.github.io',
-  base: '/prwave',
+  site: '',
   sitemap: true,
   integrations: [sitemap(), mdx(), lit(), icon()],
 });
