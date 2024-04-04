@@ -5,7 +5,6 @@ import icon from "astro-icon";
 import lit from "@astrojs/lit";
 
 export default defineConfig({
-  site: '',
   sitemap: true,
   integrations: [sitemap(), mdx(), lit(), icon()],
 });
