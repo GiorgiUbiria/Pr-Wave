@@ -62,7 +62,7 @@ const blogPosts = validDownloadedFiles.filter(Boolean).map((file) => {
       ),
       featuredImage: file.frontmatter.featuredImage,
       excerpt: file.frontmatter.excerpt,
-      href: `blog/posts/${file.name.replace(/\.mdx$/, '')}`,
+      href: `/posts/${file.name.replace(/\.mdx$/, '')}`,
     };
  }
 }).sort((a, b) => {
