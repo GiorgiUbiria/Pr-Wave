@@ -5,7 +5,7 @@ import icon from "astro-icon";
 import lit from "@astrojs/lit";
 
 export default defineConfig({
-    site: 'https://prwave.netlify.app',
+    site: 'https://ornate-moonbeam-c5e191.netlify.app/',
     sitemap: true,
     integrations: [sitemap(), mdx(), lit(), icon()],
 });
