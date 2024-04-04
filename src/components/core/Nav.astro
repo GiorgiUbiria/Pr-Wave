@@ -5,7 +5,7 @@ const {navData} = Astro.props;
 {navData && <nav>
   <ul>
     {navData.map(navItem => (
-      (<li><a href={navItem.slug} >{navItem.title}</a></li>)
+      (<li><a href={navItem.slug} data-astro-prefetch>{navItem.title}</a></li>)
     ))}
   </ul>
 </nav> }
