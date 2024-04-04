@@ -12,7 +12,7 @@ import supabase from "../../config/supabase"
 
 const { data: files, error } = await supabase.storage
  .from('public_bucket')
- .list();
+ .list('posts');
 
 if (error) {
  console.error('Error listing files:', error);
@@ -27,7 +27,7 @@ const promises = [];
 
 files.forEach((file) => {
  promises.push(
-    supabase.storage.from('public_bucket').download(`${file.name}`)
+    supabase.storage.from('public_bucket').download(`posts/${file.name}`)
  );
 });
 
@@ -62,7 +62,7 @@ const blogPosts = validDownloadedFiles.filter(Boolean).map((file) => {
       ),
       featuredImage: file.frontmatter.featuredImage,
       excerpt: file.frontmatter.excerpt,
-      href: `posts/${file.name.replace(/\.mdx$/, '')}`,
+      href: `/blog/posts/${file.name.replace(/\.mdx$/, '')}`,
     };
  }
 }).sort((a, b) => {
