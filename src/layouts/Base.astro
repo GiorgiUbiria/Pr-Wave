@@ -2,7 +2,7 @@
 import { SkipLink } from '@components/odyssey-theme';
 import BaseHead from '../components/head/BaseHead.astro';
 import type { Props as BaseHeadProps } from '../components/head/BaseHead.astro';
-
+import FacebookChat from '../components/react/FacebookChat';
 export interface Props {
 	seo?: BaseHeadProps;
 }
@@ -21,6 +21,7 @@ const { seo } = Astro.props;
 		<main id="content">
 			<slot />
 		</main>
+		<FacebookChat client:only="react" />
 		<slot name="footer" />
 	</body>
 </html>
