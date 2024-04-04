@@ -21,7 +21,7 @@ const { seo } = Astro.props;
 		<main id="content">
 			<slot />
 		</main>
-		<FacebookChat client:only="react" />
+		<FacebookChat />
 		<slot name="footer" />
 	</body>
 </html>
