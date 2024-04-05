@@ -3,7 +3,9 @@ import { Container } from '@components/odyssey-theme';
 import Layout from './Page.astro';
 import { generateTagData } from '../utils/helpers';
 
-const {content: {title, description, publishDate, canonicalURL, featuredImage, tags} } = Astro.props;
+const {content: {title, description, publishDate, canonicalURL, featuredImage, tags}, text } = Astro.props;
+
+console.log(text)
 
 let allTagsData = [];
 
@@ -38,7 +40,7 @@ const seo = {
   </div>
   <Container narrow>
     <article id="article">
-        <slot></slot>
+        {text}
     </article>
   </Container>
 </Layout>

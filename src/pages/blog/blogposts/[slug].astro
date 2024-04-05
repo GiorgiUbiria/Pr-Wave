@@ -1,0 +1,58 @@
+---
+import { Astro } from 'astro';
+import supabase from '../../../config/supabase';
+import { parse } from 'date-fns';
+import matter from 'gray-matter';
+import { Markdown } from 'astro/components';
+import Post from "../../../layouts/Post.astro";
+
+export async function getStaticPaths() {
+ const { data: files, error } = await supabase.storage
+    .from('public_bucket')
+    .list('posts');
+
+ if (error) {
+    console.error('Error listing files:', error);
+    throw error;
+ }
+
+ if (!files || !files.length) {
+    throw new Error("No files to download");
+ }
+
+ const slugs = files.map(file => file.name.replace(/\.mdx$/, ''));
+
+ const paths = slugs.map(slug => ({ params: { slug } }));
+
+ return paths;
+}
+
+const param = Astro.params;
+
+const slug = param.slug as string;
+
+async function getStaticProps(slug) {
+  const { data: result, error } = await supabase.storage
+    .from('public_bucket')
+    .download(`posts/${slug}.mdx`);
+
+  if (error) {
+    console.error('Error downloading file:', error);
+    throw error;
+  }
+
+  const data = await result.text();
+  const { data: frontmatter, content } = matter(data);
+
+  return {
+      frontmatter,
+      content,
+  };
+}
+
+
+const {frontmatter, content} = await getStaticProps(slug);
+// const {content: {title, description, publishDate, canonicalURL, featuredImage, tags} } = Astro.props;
+---
+
+<Post content={frontmatter} text={content} />
