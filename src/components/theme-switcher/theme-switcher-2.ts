@@ -31,15 +31,9 @@ export class ThemeSwitcher extends LitElement {
   width: 0;
 }
 
-#hide-checkbox {
- opacity: 0;
- height: 0;
- width: 0;
-}
-
 .toggle {
  margin-top: 17.5px;
-right: 19.5px;
+ right: 19.5px;
  position: relative;
  cursor: pointer;
  display: inline-block;

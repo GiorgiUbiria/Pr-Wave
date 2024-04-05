@@ -1,33 +1,24 @@
 ---
-import { Icon } from 'astro-icon/components';
 import { Image } from 'astro:assets';
 import { Container, Button } from '@components/odyssey-theme';
 import settings from '../../../config/settings.js';
 import { ThemeSwitcher } from '../../theme-switcher/theme-switcher-2';
 import OceanImage from '../../../images/ocean-hero.jpg';
-import DarkImage from '../../../images/dark-hero.jpg';
 ---
 
 <Container>
 	<section class="hero-section__section">
 		<div class="hero-section__text">
-				<h1>მოგესალმებით PR Wave-ზე</h1>
-				<p>
-                    ყველაფერი სოციალურ მედიასა და მარკეტინგზე
-				</p>
-				<div class="hero-btns__container">
-					<Button href="/getting-started" customIcon
-						> დაწყება
-            <Fragment slot="icon">
-              <Icon name="ic:baseline-chevron-right"/>
-            </Fragment>
-				</div>
-        {settings.enableThemeSwitcher && <ThemeSwitcher client:only="lit"/>}
+            <h1>მოგესალმებით PR Wave-ზე</h1>
+            <p>
+                ყველაფერი სოციალურ მედიასა და მარკეტინგზე
+            </p>
+            {settings.enableThemeSwitcher && <ThemeSwitcher client:only="lit"/>}
 		</div>
 		<div class="hero-section__image">
-				<picture>
-                    <Image src={OceanImage} alt="Pr Wave" id="home-hero-image"/>
-				</picture>
+            <picture>
+                <Image src={OceanImage} alt="Pr Wave" id="home-hero-image"/>
+            </picture>
 		</div>
 	</section>
 </Container>
