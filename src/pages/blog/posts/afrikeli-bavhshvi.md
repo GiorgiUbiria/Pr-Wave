@@ -14,4 +14,6 @@ slug: afrikeli-bavhshvi
 
 gamarjoba bashvebo
 
+![](/social.png)
+
 rogor brdzandebit
