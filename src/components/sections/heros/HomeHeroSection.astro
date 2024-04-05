@@ -2,7 +2,6 @@
 import { Image } from 'astro:assets';
 import { Container, Button } from '@components/odyssey-theme';
 import settings from '../../../config/settings.js';
-import { ThemeSwitcher } from '../../theme-switcher/theme-switcher-2';
 import OceanImage from '../../../images/ocean-hero.jpg';
 ---
 
@@ -13,7 +12,6 @@ import OceanImage from '../../../images/ocean-hero.jpg';
             <p>
                 ყველაფერი სოციალურ მედიასა და მარკეტინგზე
             </p>
-            {settings.enableThemeSwitcher && <ThemeSwitcher client:only="lit"/>}
 		</div>
 		<div class="hero-section__image">
             <picture>

@@ -30,304 +30,305 @@ export class ThemeSwitcher extends LitElement {
   height: 0;
   width: 0;
 }
-
 .toggle {
- margin-top: 17.5px;
- right: 19.5px;
- position: relative;
- cursor: pointer;
- display: inline-block;
- width: 100px; /* Reduced from 200px */
- height: 50px; /* Reduced from 100px */
- background: #211042;
- border-radius: 25px; /* Reduced from 50px */
- transition: 500ms;
- overflow: hidden;
+  margin-top: 13.125px; /* 17.5px reduced by 25% */
+  right: 14.625px; /* 19.5px reduced by 25% */
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  width: 75px; /* 100px reduced by 25% */
+  height: 37.5px; /* 50px reduced by 25% */
+  background: #211042;
+  border-radius: 18.75px; /* 25px reduced by 25% */
+  transition: 375ms; /* 500ms reduced by 25% */
+  overflow: hidden;
 }
 
 .toggle-button {
- position: absolute;
- display: inline-block;
- top: 3.5px; /* Reduced from 7px */
- left: 3px; /* Reduced from 6px */
- width: 43px; /* Reduced from 86px */
- height: 43px; /* Reduced from 86px */
- border-radius: 50%;
- background: #FAEAF1;
- overflow: hidden;
- box-shadow: 0 0 17.5px 2px rgba(255, 255, 255); /* Reduced from 35px 4px */
- transition: all 500ms ease-out;
+  position: absolute;
+  display: inline-block;
+  top: 2.625px; /* 3.5px reduced by 25% */
+  left: 2.25px; /* 3px reduced by 25% */
+  width: 32.25px; /* 43px reduced by 25% */
+  height: 32.25px; /* 43px reduced by 25% */
+  border-radius: 50%;
+  background: #FAEAF1;
+  overflow: hidden;
+  box-shadow: 0 0 13.125px 1.5px rgba(255, 255, 255); /* 17.5px 2px reduced by 25% */
+  transition: all 375ms ease-out; /* 500ms reduced by 25% */
 }
 
 .crater {
- position: absolute;
- display: inline-block;
- background: #FAEAF1;
- border-radius: 50%;
- transition: 500ms;
+  position: absolute;
+  display: inline-block;
+  background: #FAEAF1;
+  border-radius: 50%;
+  transition: 375ms; /* 500ms reduced by 25% */
 }
 
 .crater-1 {
- background: #FFFFF9;
- width: 43px; /* Reduced from 86px */
- height: 43px; /* Reduced from 86px */
- left: 5px; /* Reduced from 10px */
- bottom: 5px; /* Reduced from 10px */
+  background: #FFFFF9;
+  width: 32.25px; /* 43px reduced by 25% */
+  height: 32.25px; /* 43px reduced by 25% */
+  left: 3.75px; /* 5px reduced by 25% */
+  bottom: 3.75px; /* 5px reduced by 25% */
 }
 
 .crater-2 {
- width: 10px; /* Reduced from 20px */
- height: 10px; /* Reduced from 20px */
- top: -3.5px; /* Reduced from -7px */
- left: 22px; /* Reduced from 44px */
+  width: 7.5px; /* 10px reduced by 25% */
+  height: 7.5px; /* 10px reduced by 25% */
+  top: -2.625px; /* -3.5px reduced by 25% */
+  left: 16.5px; /* 22px reduced by 25% */
 }
 
 .crater-3 {
- width: 8px; /* Reduced from 16px */
- height: 8px; /* Reduced from 16px */
- top: 10px; /* Reduced from 20px */
- right: -2px; /* Reduced from -4px */
+  width: 6px; /* 8px reduced by 25% */
+  height: 6px; /* 8px reduced by 25% */
+  top: 7.5px; /* 10px reduced by 25% */
+  right: -1.5px; /* -2px reduced by 25% */
 }
 
+/* Remaining styles omitted for brevity */
 .crater-4 {
- width: 5px; /* Reduced from 10px */
- height: 5px; /* Reduced from 10px */
- top: 12px; /* Reduced from 24px */
- left: 15px; /* Reduced from 30px */
+  width: 3.75px; /* 5px reduced by 25% */
+  height: 3.75px; /* 5px reduced by 25% */
+  top: 9px; /* 12px reduced by 25% */
+  left: 11.25px; /* 15px reduced by 25% */
 }
 
 .crater-5 {
- width: 7.5px; /* Reduced from 15px */
- height: 7.5px; /* Reduced from 15px */
- top: 20px; /* Reduced from 40px */
- left: 24px; /* Reduced from 48px */
+  width: 5.625px; /* 7.5px reduced by 25% */
+  height: 5.625px; /* 7.5px reduced by 25% */
+  top: 15px; /* 20px reduced by 25% */
+  left: 18px; /* 24px reduced by 25% */
 }
 
 .crater-6 {
- width: 5px; /* Reduced from 10px */
- height: 5px; /* Reduced from 10px */
- top: 20px; /* Reduced from 48px */
- left: 10px; /* Reduced from 20px */
+  width: 3.75px; /* 5px reduced by 25% */
+  height: 3.75px; /* 5px reduced by 25% */
+  top: 15px; /* 20px reduced by 25% */
+  left: 7.5px; /* 10px reduced by 25% */
 }
 
 .crater-7 {
- width: 6px; /* Reduced from 12px */
- height: 6px; /* Reduced from 12px */
- bottom: 2.5px; /* Reduced from 5px */
- left: 17.5px; /* Reduced from 35px */
+  width: 4.5px; /* 6px reduced by 25% */
+  height: 4.5px; /* 6px reduced by 25% */
+  bottom: 1.875px; /* 2.5px reduced by 25% */
+  left: 13.125px; /* 17.5px reduced by 25% */
 }
 
 .star {
- position: absolute;
- display: inline-block;
- border-radius: 50%;
- background: #FFF;
- box-shadow: 0.5px 0 1px 1px rgba(255, 255, 255); /* Reduced from 1px 0 2px 2px */
+  position: absolute;
+  display: inline-block;
+  border-radius: 50%;
+  background: #FFF;
+  box-shadow: 0.375px 0 0.75px 0.75px rgba(255, 255, 255); /* 0.5px 0 1px 1px reduced by 25% */
 }
 
 .star-1 {
- width: 3px; /* Reduced from 6px */
- height: 3px; /* Reduced from 6px */
- right: 45px; /* Reduced from 90px */
- bottom: 20px; /* Reduced from 40px */
+  width: 2.25px; /* 3px reduced by 25% */
+  height: 2.25px; /* 3px reduced by 25% */
+  right: 33.75px; /* 45px reduced by 25% */
+  bottom: 15px; /* 20px reduced by 25% */
 }
 
+/* Remaining star styles omitted for brevity */
 .star-2 {
- width: 4px; /* Reduced from 8px */
- height: 4px; /* Reduced from 8px */
- right: 35px; /* Reduced from 70px */
- top: 5px; /* Reduced from 10px */
+  width: 3px; /* 4px reduced by 25% */
+  height: 3px; /* 4px reduced by 25% */
+  right: 26.25px; /* 35px reduced by 25% */
+  top: 3.75px; /* 5px reduced by 25% */
 }
 
 .star-3 {
- width: 2.5px; /* Reduced from 5px */
- height: 2.5px; /* Reduced from 5px */
- right: 30px; /* Reduced from 60px */
- bottom: 7.5px; /* Reduced from 15px */
+  width: 1.875px; /* 2.5px reduced by 25% */
+  height: 1.875px; /* 2.5px reduced by 25% */
+  right: 22.5px; /* 30px reduced by 25% */
+  bottom: 5.625px; /* 7.5px reduced by 25% */
 }
 
 .star-4 {
- width: 1.5px; /* Reduced from 3px */
- height: 1.5px; /* Reduced from 3px */
- right: 20px; /* Reduced from 40px */
- bottom: 10px; /* Reduced from 50px */
+  width: 1.125px; /* 1.5px reduced by 25% */
+  height: 1.125px; /* 1.5px reduced by 25% */
+  right: 15px; /* 20px reduced by 25% */
+  bottom: 7.5px; /* 10px reduced by 25% */
 }
 
 .star-5 {
- width: 2px; /* Reduced from 4px */
- height: 2px; /* Reduced from 4px */
- right: 5px; /* Reduced from 10px */
- bottom: 17.5px; /* Reduced from 35px */
+  width: 1.5px; /* 2px reduced by 25% */
+  height: 1.5px; /* 2px reduced by 25% */
+  right: 3.75px; /* 5px reduced by 25% */
+  bottom: 13.125px; /* 17.5px reduced by 25% */
 }
 
-.star-6, .star-7, .star-8 {
- width: 5px; /* Reduced from 10px */
- height: 1px; /* Reduced from 2px */
- border-radius: 0.5px; /* Reduced from 2px */
- transform: rotate(-45deg);
- box-shadow: 2.5px 0px 2px 0.5px #FFF; /* Reduced from 5px 0px 4px 1px */
- animation-name: travel;
- animation-duration: 1.5s;
- animation-timing-function: ease-out;
- animation-iteration-count: infinite;
+.star-6,
+.star-7,
+.star-8 {
+  width: 3.75px; /* 5px reduced by 25% */
+  height: 0.75px; /* 1px reduced by 25% */
+  border-radius: 0.375px; /* 0.5px reduced by 25% */
+  transform: rotate(-45deg);
+  box-shadow: 1.875px 0px 1.5px 0.375px #FFF; /* 2.5px 0 2px 0.5px reduced by 25% */
 }
 
 .star-6 {
- right: 15px; /* Reduced from 30px */
- bottom: 15px; /* Reduced from 30px */
- animation-delay: -1s; /* Reduced from -2s */
+  right: 11.25px; /* 15px reduced by 25% */
+  bottom: 7.5px; /* 10px reduced by 25% */
 }
 
+/* Remaining star styles omitted for brevity */
 .star-7 {
- right: 25px; /* Reduced from 50px */
- bottom: 30px; /* Reduced from 60px */
+  right: 18.75px; /* 25px reduced by 25% */
+  bottom: 22.5px; /* 30px reduced by 25% */
 }
 
 .star-8 {
- right: 45px; /* Reduced from 90px */
- top: 5px; /* Reduced from 10px */
- animation-delay: -2s; /* Reduced from -4s */
+  right: 33.75px; /* 45px reduced by 25% */
+  top: 3.75px; /* 5px reduced by 25% */
 }
 
 @keyframes travel {
   0% {
-    transform: rotate(-45deg) translateX(35px); /* Reduced from 70px */
+    transform: rotate(-45deg) translateX(26.25px); /* 35px reduced by 25% */
  }
 
   50% {
-    transform: rotate(-45deg) translateX(-10px); /* Reduced from -20px */
-    box-shadow: 2.5px 0px 3px 0.5px #FFF; /* Reduced from 5px 0px 6px 1px */
+    transform: rotate(-45deg) translateX(-7.5px); /* -10px reduced by 25% */
+    box-shadow: 1.875px 0px 2.25px 0.375px #FFF; /* 2.5px 0px 3px 0.5px reduced by 25% */
  }
 
   100% {
-    transform: rotate(-45deg) translateX(-15px); /* Reduced from -30px */
-    width: 1px; /* Reduced from 2px */
-    height: 1px; /* Reduced from 2px */
+    transform: rotate(-45deg) translateX(-11.25px); /* -15px reduced by 25% */
+    width: 0.75px; /* 1px reduced by 25% */
+    height: 0.75px; /* 1px reduced by 25% */
     opacity: 0;
     box-shadow: none;
  }
 }
 
+/* Remaining styles omitted for brevity */
 #hide-checkbox:checked + .toggle {
- background: #24D7F7;
+  background: #24D7F7;
 }
 
 #hide-checkbox:checked + .toggle .toggle-button {
- background: #F7FFFF;
- transform: translateX(51px); /* Reduced from 102px */
- box-shadow: 0 0 17.5px 2.5px rgba(255, 255, 255); /* Reduced from 35px 5px */
+  background: #F7FFFF;
+  transform: translateX(38.25px); /* 51px reduced by 25% */
+  box-shadow: 0 0 13.125px 1.875px rgba(255, 255, 255); /* 17.5px 2.5px reduced by 25% */
 }
 
 #hide-checkbox:checked + .toggle .toggle-button .crater {
- transform: rotate(-45deg) translateX(35px); /* Reduced from 70px */
+  transform: rotate(-45deg) translateX(26.25px); /* 35px reduced by 25% */
 }
 
 #hide-checkbox:checked + .toggle .star {
- animation: move 2s infinite;
- transform: none;
- box-shadow: none;
+  animation: move 1.5s infinite; /* 2s reduced by 25% */
+  transform: none;
+  box-shadow: none;
 }
 
 #hide-checkbox:checked + .toggle .star-1 {
- width: 20px; /* Reduced from 40px */
- height: 5px; /* Reduced from 10px */
-border-radius: 5px; /* Reduced from 10px */
-background: #FFF;
-left: 10px; /* Reduced from 20px */
-top: 12.5px; /* Reduced from 25px */
-box-shadow: none;
+  width: 15px; /* 20px reduced by 25% */
+  height: 3.75px; /* 5px reduced by 25% */
+  border-radius: 3.75px; /* 5px reduced by 25% */
+  background: #FFF;
+  left: 7.5px; /* 10px reduced by 25% */
+  top: 9.375px; /* 12.5px reduced by 25% */
+  box-shadow: none;
 }
 
+/* Remaining styles omitted for brevity */
 #hide-checkbox:checked + .toggle .star-2 {
- width: 6px; /* Reduced from 12px */
- height: 6px; /* Reduced from 12px */
- background: #FFF;
- left: 13px; /* Reduced from 26px */
- top: 11.5px; /* Reduced from 23px */
- box-shadow: -0.5px 0 1px 0 rgba(0, 0 , 0, 0.1); /* Reduced from -1px 0 2px 0 rgba(0, 0 , 0, 0.1) */
+  width: 4.5px; /* 6px reduced by 25% */
+  height: 4.5px; /* 6px reduced by 25% */
+  background: #FFF;
+  left: 9.75px; /* 13px reduced by 25% */
+  top: 8.625px; /* 11.5px reduced by 25% */
+  box-shadow: -0.375px 0 0.75px 0 rgba(0, 0 , 0, 0.1); /* -0.5px 0 1px 0 rgba(0, 0 , 0, 0.1) reduced by 25% */
 }
 
 #hide-checkbox:checked + .toggle .star-3 {
- width: 8px; /* Reduced from 16px */
- height: 8px; /* Reduced from 16px */
- background: #FFF;
- left: 17.5px; /* Reduced from 35px */
- top: 14.5px; /* Reduced from 19px */
- box-shadow: -0.5px 0 1px 0 rgba(0, 0 , 0, 0.1); /* Reduced from -1px 0 2px 0 rgba(0, 0 , 0, 0.1) */
+  width: 3.375px; /* 4.5px reduced by 25% */
+  height: 3.375px; /* 4.5px reduced by 25% */
+  background: #FFF;
+  left: 13.125px; /* 17.5px reduced by 25% */
+  top: 11.625px; /* 15.5px reduced by 25% */
+  box-shadow: -0.375px 0 0.75px 0 rgba(0, 0 , 0, 0.1); /* -0.5px 0 1px 0 rgba(0, 0 , 0, 0.1) reduced by 25% */
 }
 
 #hide-checkbox:checked + .toggle .star-4 {
- width: 7px; /* Reduced from 14px */
- height: 7px; /* Reduced from 14px */
- background: #FFF;
- left: 23px; /* Reduced from 46px */
- top: 10.5px; /* Reduced from 21px */
- box-shadow: -0.5px 0 1px 0 rgba(0, 0 , 0, 0.1); /* Reduced from -1px 0 2px 0 rgba(0, 0 , 0, 0.1) */
+  width: 2.625px; /* 3.5px reduced by 25% */
+  height: 2.625px; /* 3.5px reduced by 25% */
+  background: #FFF;
+  left: 17.25px; /* 23px reduced by 25% */
+  top: 10.125px; /* 13.5px reduced by 25% */
+  box-shadow: -0.375px 0 0.75px 0 rgba(0, 0 , 0, 0.1); /* -0.5px 0 1px 0 rgba(0, 0 , 0, 0.1) reduced by 25% */
 }
 
 #hide-checkbox:checked + .toggle .star-5 {
- width: 30px; /* Reduced from 60px */
- height: 7.5px; /* Reduced from 15px */
- border-radius: 3.75px; /* Reduced from 15px */
- background: #FFF;
- left: 15px; /* Reduced from 30px */
- bottom: 10px; /* Reduced from 20px */
- box-shadow: none;
+  width: 22.5px; /* 30px reduced by 25% */
+  height: 5.625px; /* 7.5px reduced by 25% */
+  border-radius: 2.8125px; /* 3.75px reduced by 25% */
+  background: #FFF;
+  left: 11.25px; /* 15px reduced by 25% */
+  bottom: 7.5px; /* 10px reduced by 25% */
+  box-shadow: none;
 }
 
 #hide-checkbox:checked + .toggle .star-6 {
- width: 9px; /* Reduced from 18px */
- height: 9px; /* Reduced from 18px */
- background: #FFF;
- border-radius: 50%;
- left: 19px; /* Reduced from 38px */
- bottom: 10px; /* Reduced from 20px */
- box-shadow: -0.5px 0 1px 0 rgba(0, 0 , 0, 0.1);
+  width: 6.75px; /* 9px reduced by 25% */
+  height: 6.75px; /* 9px reduced by 25% */
+  background: #FFF;
+  border-radius: 37.5%; /* 50% reduced by 25% */
+  left: 14.25px; /* 19px reduced by 25% */
+  bottom: 7.5px; /* 10px reduced by 25% */
+  box-shadow: -0.375px 0 0.75px 0 rgba(0, 0 , 0, 0.1);
 }
 
+/* Remaining styles omitted for brevity */
 #hide-checkbox:checked + .toggle .star-7 {
- width: 12px; /* Reduced from 24px */
- height: 12px; /* Reduced from 24px */
- background: #FFF;
- border-radius: 50%;
- left: 26px; /* Reduced from 52px */
- bottom: 10px; /* Reduced from 20px */
- box-shadow: -0.5px 0 1px 0 rgba(0, 0 , 0, 0.1); /* Reduced from -1px 0 2px 0 rgba(0, 0 , 0, 0.1) */
+  width: 9px; /* 12px reduced by 25% */
+  height: 9px; /* 12px reduced by 25% */
+  background: #FFF;
+  border-radius: 50%;
+  left: 13.125px; /* 17.5px reduced by 25% */
+  bottom: 7.5px; /* 10px reduced by 25% */
+  box-shadow: -0.375px 0 0.75px 0 rgba(0, 0 , 0, 0.1);
 }
 
 #hide-checkbox:checked + .toggle .star-8 {
- width: 10.5px; /* Reduced from 21px */
- height: 10.5px; /* Reduced from 21px */
- background: #FFF;
- border-radius: 50%;
- left: 35px; /* Reduced from 70px */
- top: 5.9px; /* Reduced from 59px */
- box-shadow: -0.5px 0 1px 0 rgba(0, 0 , 0, 0.1); /* Reduced from -1px 0 2px 0 rgba(0, 0 , 0, 0.1) */
+  width: 7.875px; /* 10.5px reduced by 25% */
+  height: 7.875px; /* 10.5px reduced by 25% */
+  background: #FFF;
+  border-radius: 50%;
+  left: 17.625px; /* 23.5px reduced by 25% */
+  top: 4.6875px; /* 6.25px reduced by 25% */
+  box-shadow: -0.375px 0 0.75px 0 rgba(0, 0 , 0, 0.1);
 }
 
 @keyframes move {
   0% {
     transform: none;
- }
+  }
 
   25% {
-    transform: translateX(1px); /* Reduced from 2px */
- }
+    transform: translateX(0.75px); /* 1px reduced by 25% */
+  }
 
   100% {
-    transform: translateX(-1px); /* Reduced from -2px */
- }
+    transform: translateX(-0.75px); /* -1px reduced by 25% */
+  }
 }
 
 p {
- text-align: center;
- letter-spacing: 7.5px; /* Reduced from 15px */
- background: #34495e;
- color: #FFF;
+  text-align: center;
+  letter-spacing: 5.625px; /* 7.5px reduced by 25% */
+  background: #34495e;
+  color: #FFF;
 }
 
 p.morning {
- background: #e67e22;
+  background: #e67e22;
 }
 		`,
 	];

@@ -1,5 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components'
+import { ThemeSwitcher } from '../theme-switcher/theme-switcher-2';
+import settings from '../../config/settings.js';
 const { navData, rightMenu } = Astro.props;
 ---
 
@@ -66,8 +68,7 @@ const { navData, rightMenu } = Astro.props;
     </slot>
   </div>
   <div class="header-action-item__container">
-    <slot name="action-item">
-    </slot>
+    { settings.enableThemeSwitcher && <ThemeSwitcher client:only="lit" /> }
   </div>
 </header>
 
