@@ -9,6 +9,7 @@ const { reversed } = Astro.props;
 		class={`sticky-text-image__section ${
 			reversed && `sticky-text-image__section--reversed`
 		}`}
+        id="sticky-text-image__section"
 	>
 		<div class="sticky-text-image__text">
 			<slot name="text-container" />
