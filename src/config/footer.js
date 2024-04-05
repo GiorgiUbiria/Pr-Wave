@@ -1,37 +1,37 @@
 export const footerSocials = [
     {
         name: 'Twitter',
-        url: 'https://twitter.com/littlesticksdev',
-        icon: "mdi:twitter",
+        url: 'https://linkedin.com/prwave',
+        icon: "mdi:linkedin",
     },
     {
         name: 'Youtube',
-        url: 'https://youtube.com/c/LittleSticks',
+        url: 'https://youtube.com/c/prwave',
         icon: "mdi:youtube",
     },
     {
-        name: 'Github',
-        url: 'https://github.com/littlesticks',
-        icon: "mdi:github",
+        name: 'Instagram',
+        url: 'https://instagram.com/prwave',
+        icon: "mdi:instagram",
     },
     {
-        name: 'Discord',
-        url: 'https://littlesticks.dev/discord',
-        icon: "ic:baseline-discord",
+        name: 'Facebook',
+        url: 'https://facebook.com/prwave',
+        icon: "ic:baseline-facebook",
     },
 ]
 
 export const footerLists = [
     {
-        title: 'Landing Pages',
+        title: 'Pr Wave',
         items: [
             {
-                title: 'Landing Page 1',
-                slug: '/landing-pages/landing-1',
+                title: 'მთავარი',
+                slug: '/',
             },
             {
-                title: 'Landing Page 2',
-                slug: '/landing-pages/landing-2',
+                title: 'ბლოგი',
+                slug: '/blog',
             },
         ],
     },
@@ -43,34 +43,13 @@ export const footerLists = [
                 slug: '/company/about',
             },
             {
-                title: 'ბლოგი',
-                slug: '/blog',
+                title: 'წესები და პირობები',
+                slug: '/legal',
             },
             {
                 title: 'კონტაქტი',
                 slug: '/company/contact',
             },
-        ],
-    },
-    {
-        title: 'Theme',
-        items: [
-            {
-                title: 'Get Started',
-                slug: '/theme/get-started',
-            },
-            {
-                title: 'Style Guide',
-                slug: '/theme/style-guide',
-            },
-            {
-                title: 'Theme Setup',
-                slug: '/theme/theme-setup',
-            },
-            {
-                title: 'Customizing Odyssey',
-                slug: '/theme/customizing-odyssey',
-            }
         ],
     },
 ];
