@@ -1,11 +1,11 @@
 ---
 import BlogPostPreview from './BlogPostPreview.astro';
 
-const {blogPosts} = Astro.props;
+const {posts} = Astro.props;
 ---
 
 <ul class="blog-posts-list__list">
-  {blogPosts?.map((post: any) => {
+  {posts?.map((post: any) => {
     return (
       <BlogPostPreview post={post} />
     )
