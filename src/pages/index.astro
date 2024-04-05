@@ -1,9 +1,14 @@
 ---
 import Layout from '../layouts/Page.astro';
 import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro';
+
+const seo = {
+    title: `Home | Pr Wave`,
+    description: `This is the home page for the Pr Wave.`,
+};
 ---
 
-<Layout>
+<Layout {seo}>
 	<HomeHeroSection />
 </Layout>
 
