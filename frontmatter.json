@@ -6,7 +6,7 @@
     "frontMatter.content.pageFolders": [
         {
             "title": "blog/posts",
-            "path": "[[workspace]]/src/pages/blog/posts"
+            "path": "[[workspace]]/src/pages/blog/posts/"
         }
     ],
     "frontMatter.taxonomy.contentTypes": [
@@ -44,5 +44,22 @@
             ]
         }
     ],
-    "frontMatter.git.enabled": true
+    "frontMatter.git.enabled": true,
+    "frontMatter.content.snippets": {
+        "Layout snippet": {
+            "description": "",
+            "body": [
+                "---",
+                "layout: '../../../layouts/Post.astro'",
+                "title: Is Remote Work Better For Your Mental Health?",
+                "description: This is a sample blog post for Odyssey",
+                "publishDate: July 4, 2021",
+                "featuredImage: '/assets/images/blog/remote-work-mental-health/featured.jpg'",
+                "excerpt: 'This is a sample blog post for the Odyssey Theme. If an excerpt is provided it will appear in the preview.'",
+                "tags: ['Remote Work']",
+                "---"
+            ],
+            "fields": []
+        }
+    }
 }
