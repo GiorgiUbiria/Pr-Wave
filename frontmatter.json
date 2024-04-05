@@ -62,5 +62,6 @@
       "fields": []
     }
   },
-  "frontMatter.framework.startCommand": "bun dev"
+  "frontMatter.framework.startCommand": "bun dev",
+  "frontMatter.website.host": "https://ornate-moonbeam-c5e191.netlify.app/"
 }
