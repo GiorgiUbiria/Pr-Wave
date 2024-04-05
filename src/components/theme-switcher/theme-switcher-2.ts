@@ -362,7 +362,7 @@ p.morning {
 			_heroImage.src = './src/images/dark-hero.jpg';
 		}
 		if (theme === 'ocean') {
-			_heroImage.src = './src/images/ocean-hero.jpg';
+			_heroImage.src = '/src/images/ocean-hero.jpg';
 		}
 		localStorage.setItem('theme', theme);
 		this.theme = theme;
