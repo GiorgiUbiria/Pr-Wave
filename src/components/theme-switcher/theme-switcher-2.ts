@@ -362,15 +362,15 @@ p.morning {
     }
 
     private _setTheme(theme: string) {
-        const _heroImage = document.querySelector('#home-hero-image') as HTMLImageElement;
-        if (_heroImage) {
-            if (theme === 'dark') {
-                _heroImage.src = 'assets/images/dark-hero.jpg';
-            }
-            if (theme === 'ocean') {
-                _heroImage.src = 'assets/images/ocean-hero.jpg';
-            }
-        }
+        // const _heroImage = document.querySelector('#home-hero-image') as HTMLImageElement;
+        // if (_heroImage) {
+        //     if (theme === 'dark') {
+        //         _heroImage.classList.add('dark-hero-image');
+        //     }
+        //     if (theme === 'ocean') {
+        //         _heroImage.classList.remove('dark-hero-image');
+        //     }
+        // }
         const doc = document.firstElementChild;
         doc?.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);

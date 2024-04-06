@@ -1,21 +1,22 @@
 ---
 import { Container } from '@components/odyssey-theme';
 import ScrollDown from '@components/core/ScrollDown.astro';
+import OceanHeroImage from '../../../images/ocean-hero.jpg';
+import { Image } from 'astro:assets';
 ---
 
 <Container>
 	<section class="hero-section__section">
 		<div class="hero-section__text">
-            <h1>მოგესალმებით PR Wave-ზე</h1>
-            <p>
-                ყველაფერი სოციალურ მედიასა და მარკეტინგზე
-            </p>
-            <ScrollDown />
+			<h1>მოგესალმებით PR Wave-ზე</h1>
+			<p>ყველაფერი სოციალურ მედიასა და მარკეტინგზე</p>
+			<ScrollDown />
 		</div>
 		<div class="hero-section__image">
-            <picture>
-                <img src="assets/images/ocean-hero.jpg" alt="Pr Wave" id="home-hero-image"/>
-            </picture>
+			<picture>
+				<Image src={OceanHeroImage} alt="Pr Wave" id="home-hero-ocean-image"
+				/>
+			</picture>
 		</div>
 	</section>
 </Container>
@@ -28,7 +29,7 @@ import ScrollDown from '@components/core/ScrollDown.astro';
 		grid-template-columns: 1fr 1fr;
 		align-items: center;
 		gap: 1rem;
-        padding-bottom: 2rem;
+		padding-bottom: 2rem;
 	}
 	.hero-section__text {
 		justify-self: center;
@@ -58,7 +59,7 @@ import ScrollDown from '@components/core/ScrollDown.astro';
 		}
 	}
 
-    .hidden {
-        display: none;
-    }
+	.hidden {
+		display: none;
+	}
 </style>
