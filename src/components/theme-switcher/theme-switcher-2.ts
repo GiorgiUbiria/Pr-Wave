@@ -359,10 +359,10 @@ p.morning {
 		this._doc.setAttribute('data-theme', theme);
 		const _heroImage = document.querySelector('#home-hero-image') as HTMLImageElement;
 		if (theme === 'dark') {
-			_heroImage.src = './src/images/dark-hero.jpg';
+			_heroImage.src = 'assets/images/dark-hero.jpg';
 		}
 		if (theme === 'ocean') {
-			_heroImage.src = '/src/images/ocean-hero.jpg';
+			_heroImage.src = 'assets/images/ocean-hero.jpg';
 		}
 		localStorage.setItem('theme', theme);
 		this.theme = theme;
