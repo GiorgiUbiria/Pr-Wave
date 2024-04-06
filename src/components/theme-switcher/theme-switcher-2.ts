@@ -2,27 +2,27 @@ import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 import {
-	darkThemeIcon,
-	blueThemeIcon,
+    darkThemeIcon,
+    blueThemeIcon,
 } from './icons.js';
 
 const themes = [
- {
-    name: 'dark',
-    icon: darkThemeIcon,
-    label: 'Dark',
- },
- {
-    name: 'ocean',
-    icon: blueThemeIcon,
-    label: 'Ocean',
- },
+    {
+        name: 'dark',
+        icon: darkThemeIcon,
+        label: 'Dark',
+    },
+    {
+        name: 'ocean',
+        icon: blueThemeIcon,
+        label: 'Ocean',
+    },
 ]
 
 @customElement('theme-switcher')
 export class ThemeSwitcher extends LitElement {
-	static styles = [
-		css`
+    static styles = [
+        css`
 @import url('https://fonts.googleapis.com/css?family=Nunito:800i&display=swap');
 
 #hide-checkbox {
@@ -331,50 +331,58 @@ p.morning {
   background: #e67e22;
 }
 		`,
-	];
+    ];
 
-	private _doc = document.firstElementChild;
+    private _doc = document.firstElementChild;
 
-	@property({ type: String })
-	theme: string | null = null;
+    @property({ type: String })
+    theme: string | null = null;
 
-	private _getCurrentTheme() {
-		const localStorageTheme = localStorage.getItem('theme');
-		if (localStorageTheme !== null) {
-			this._setTheme(localStorageTheme);
-		} else {
-			if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-				this._setTheme('dark');
-			} else {
-				this._setTheme('ocean');
-			}
-		}
-	}
+    connectedCallback() {
+        super.connectedCallback();
+        this._getCurrentTheme();
+    }
 
-	firstUpdated() {
-		this._getCurrentTheme();
-	}
+    private _getCurrentTheme() {
+        const localStorageTheme = localStorage.getItem('theme');
+        if (localStorageTheme !== null) {
+            this.theme = localStorageTheme;
+            this._setTheme(localStorageTheme);
+        } else {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                this._setTheme('dark');
+            } else {
+                this._setTheme('ocean');
+            }
+        }
+    }
 
-	private _setTheme(theme) {
-		this._doc.setAttribute('data-theme', theme);
-		const _heroImage = document.querySelector('#home-hero-image') as HTMLImageElement;
-		if (theme === 'dark') {
-			_heroImage.src = 'assets/images/dark-hero.jpg';
-		}
-		if (theme === 'ocean') {
-			_heroImage.src = 'assets/images/ocean-hero.jpg';
-		}
-		localStorage.setItem('theme', theme);
-		this.theme = theme;
-	}
+    firstUpdated() {
+        this._getCurrentTheme();
+    }
 
-	private _toggleTheme() {
-		this.theme = this.theme === 'dark' ? 'ocean' : 'dark';
-		this._setTheme(this.theme);
-	}
+    private _setTheme(theme: string) {
+        const _heroImage = document.querySelector('#home-hero-image') as HTMLImageElement;
+        if (_heroImage) {
+            if (theme === 'dark') {
+                _heroImage.src = 'assets/images/dark-hero.jpg';
+            }
+            if (theme === 'ocean') {
+                _heroImage.src = 'assets/images/ocean-hero.jpg';
+            }
+        }
+        const doc = document.firstElementChild;
+        doc?.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+    }
 
-	render() {
-		return html`
+    private _toggleTheme() {
+        this.theme = this.theme === 'dark' ? 'ocean' : 'dark';
+        this._setTheme(this.theme);
+    }
+
+    render() {
+        return html`
             <div class="wrapper">
               <input type="checkbox" id="hide-checkbox" ?checked=${this.theme === 'ocean'} @change=${this._toggleTheme}>
               <label for="hide-checkbox" class="toggle">
@@ -398,5 +406,5 @@ p.morning {
               </label>
             </div>
 		`;
-	}
+    }
 }
