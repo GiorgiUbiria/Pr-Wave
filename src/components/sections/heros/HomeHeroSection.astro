@@ -1,8 +1,6 @@
 ---
-import { Image } from 'astro:assets';
 import { Container } from '@components/odyssey-theme';
 import ScrollDown from '@components/core/ScrollDown.astro';
-import OceanImage from '../../../images/ocean-hero.jpg';
 ---
 
 <Container>
@@ -16,7 +14,7 @@ import OceanImage from '../../../images/ocean-hero.jpg';
 		</div>
 		<div class="hero-section__image">
             <picture>
-                <Image src={OceanImage} alt="Pr Wave" id="home-hero-image"/>
+                <img src="assets/images/ocean-hero.jpg" alt="Pr Wave" id="home-hero-image"/>
             </picture>
 		</div>
 	</section>
