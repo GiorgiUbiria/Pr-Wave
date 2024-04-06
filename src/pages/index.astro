@@ -13,8 +13,8 @@ import {
 import TextAndImageHero from '../components/sections/heros/TextAndImageHero.astro';
 
 const seo = {
-    title: `Home | Pr Wave`,
-    description: `This is the home page for the Pr Wave.`,
+	title: `Home | Pr Wave`,
+	description: `This is the home page for the Pr Wave.`,
 };
 ---
 
@@ -57,7 +57,9 @@ const seo = {
 				შენთვისაა.
 			</p>
 		</div>
-		<Button slot="column-1-cta">გაიგეთ მეტი</Button>
+		<Button slot="column-1-cta">
+			<a href="/company/courses"> გაიგეთ მეტი</a>
+		</Button>
 		<div slot="column-2-body">
 			<h2>მასტერკლასები?</h2>
 			<p>
@@ -66,7 +68,9 @@ const seo = {
 				შენთვისაა.
 			</p>
 		</div>
-		<Button slot="column-2-cta" outlined>გაიგეთ მეტი</Button>
+		<Button slot="column-2-cta" outlined>
+			<a href="/company/masterclass"> გაიგეთ მეტი</a>
+		</Button>
 		<div slot="column-3-body">
 			<h2>სხვა სერვისები?</h2>
 			<p>
@@ -75,7 +79,9 @@ const seo = {
 				შენთვისაა.
 			</p>
 		</div>
-		<Button slot="column-3-cta">გაიგეთ მეტი</Button>
+		<Button slot="column-3-cta">
+			<a href="/company/services"> გაიგეთ მეტი</a>
+		</Button>
 	</ThreeColumnTextSection>
 
 	<YouTubeEmbedSection
