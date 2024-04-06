@@ -2,7 +2,7 @@
 import { Icon } from 'astro-icon/components';
 import Container  from '../core/Container.astro';
 
-const { footerSocials, footerLists, copyrightName, background, color, showLittleSticksPlug = false } =
+const { footerSocials, copyrightName, background, color } =
   Astro.props;
 ---
 
@@ -17,7 +17,7 @@ const { footerSocials, footerLists, copyrightName, background, color, showLittle
         </div>
         <ul class="footer-socials__list">
           {
-            footerSocials.map((social) => (
+            footerSocials.map((social: any) => (
               <li class="footer-socials__item">
                 <a
                   href={social.url}
@@ -26,28 +26,13 @@ const { footerSocials, footerLists, copyrightName, background, color, showLittle
                   class="footer-socials__link"
                   title={`Open ${social.name} profile`}
                 >
-                  <Icon name={social.icon} width={24} height={24} />
+                  <Icon name={social.icon} width={30} height={30} />
                 </a>
               </li>
             ))
           }
         </ul>
       </div>
-      {
-        footerLists.map((list) => (
-          <div>
-            <p><strong>{list.title}</strong></p>
-            <ul class="footer-link__list">
-              {list.items.map((item) => (
-                <li>
-                  <a href={item.slug}>{item.title}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))
-      }
-    </div>
     <div class="footer-copyright__container">
       <p> &copy; {new Date().getFullYear()}. ყველა უფლება დაცულია | {copyrightName}</p>
     </div>
@@ -64,61 +49,51 @@ const { footerSocials, footerLists, copyrightName, background, color, showLittle
     color: var(--footer-color);
     border-top-left-radius: var(--theme-shape-radius);
     border-top-right-radius: var(--theme-shape-radius);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
   .footer-grid__container {
-    padding: 10vh 0 1rem 0;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-brand__container {
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .logo-wrapper {
+    margin-bottom: 1rem;
   }
   .footer-socials__list {
-    margin: 1rem 0;
+    margin-bottom: 1rem;
     padding: 0;
     display: flex;
     list-style: none;
+    justify-content: center;
   }
   .footer-socials__item {
-    margin-right: 0.5rem;
-  }
-  .footer-link__list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  .footer-link__list li {
-    margin-bottom: 0.5rem;
-  }
-  .footer-link__list li a {
-    text-decoration: none;
-  }
-  .footer-link__list li a:hover {
-    opacity: 0.84;
+    margin-right: 1rem;
   }
   .footer-copyright__container {
-    display: flex;
-    flex-direction: column;
-    /* justify-content: space-between; */
+    margin-top: 2rem;
   }
   .footer-copyright__container p {
-    font-size: var(--font-size-sm);
+    font-size: 0.75rem;
+  }
+  .footer-socials__link svg {
+    width: 30px;
+    height: 30px;
   }
   @media (max-width: 768px) {
-    .footer-grid__container :first-child {
-      grid-column: 1/-1;
-    }
     .footer-grid__container {
       padding: 5vh 0;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-    }
-  }
-  @media (max-width: 600px) {
-    .footer-grid__container {
-      padding: 5vh 0;
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-    .footer-copyright__container {
-      flex-direction: column;
     }
   }
 </style>
