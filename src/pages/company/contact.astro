@@ -51,9 +51,12 @@ const seo = {
 		padding: 2rem;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
+        justify-content: center;
 		background-color: var(--theme-surface-1);
 		border-radius: var(--theme-shape-radius);
+		max-width: 100%; /* Ensure it doesn't exceed the viewport width */
+		box-sizing: border-box; /* Include padding in width calculation */
+		word-break: break-word; /* Break words if they exceed container width */
 	}
 	.col-2__container {
 		display: flex;
@@ -63,6 +66,21 @@ const seo = {
 	@media (max-width: 768px) {
 		.contact-hero__section {
 			grid-template-columns: 1fr;
+		}
+		.content-hero__text-section {
+			align-items: center; /* Center content horizontally */
+			text-align: center; /* Center text */
+		}
+		h1 {
+			font-size: 32px;
+		}
+		p {
+			font-size: 14px;
+		}
+	}
+	@media (max-width: 1352px) {
+		h1 {
+			font-size: 48px;
 		}
 	}
 </style>
