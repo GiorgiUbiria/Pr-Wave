@@ -27,3 +27,21 @@ const { seo } = Astro.props;
 		<slot name="footer" />
 	</body>
 </html>
+
+<script>
+	window.addEventListener('scroll', () => {
+		const scrollY = window.scrollY;
+		const windowHeight = window.innerHeight;
+		const documentHeight = document.documentElement.scrollHeight;
+		const screenWidth = window.innerWidth;
+
+		if (
+			screenWidth >= 768 &&
+			scrollY + windowHeight >= documentHeight - 400
+		) {
+			document.getElementById('scrollButton').style.display = 'block';
+		} else {
+			document.getElementById('scrollButton').style.display = 'none';
+		}
+	});
+</script>

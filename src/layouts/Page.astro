@@ -36,17 +36,3 @@ const { seo } = Astro.props as Props;
 		<Logo slot="logo" />
 	</Footer>
 </Layout>
-
-<script>
-	window.addEventListener('scroll', () => {
-		const scrollY = window.scrollY;
-		const windowHeight = window.innerHeight;
-		const documentHeight = document.documentElement.scrollHeight;
-
-		if (scrollY + windowHeight >= documentHeight - 400) {
-			document.getElementById('scrollButton').style.display = 'block';
-		} else {
-			document.getElementById('scrollButton').style.display = 'none';
-		}
-	});
-</script>
