@@ -1,10 +1,13 @@
 ---
 import { Button, Container, TextCardSection } from '@components/odyssey-theme';
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Page.astro';
+import NotFoundImage from '../images/404.webp';
 
 const seo = {
-	title: 'Get started on with Pr Wave and pave your path in Social Marketing.',
-	description: 'Get started on with Pr Wave and pave your path in Social Marketing.',
+	title: 'Page Not Found | Pr Wave.',
+	description:
+		'Page Not Found | Pr Wave. This is the 404 page for the Pr Wave.',
 };
 ---
 
@@ -16,6 +19,7 @@ const seo = {
 			<div class="cta-buttons__container">
 				<Button href="/">დაბრუნება</Button>
 			</div>
+			<Image src={NotFoundImage} alt="404" width={400} height={400} />
 		</TextCardSection>
 	</Container>
 </Layout>
