@@ -1,6 +1,8 @@
 ---
 const { url, rounded, loading = 'lazy' } = Astro.props;
 
+export const prerender = true;
+
 function getYouTubeId(url) {
 	const regExp =
 		/^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
