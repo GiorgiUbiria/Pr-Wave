@@ -10,7 +10,7 @@ export { default as AnnouncementBar } from './core/AnnouncementBar.astro';
 export { default as Button } from './buttons/Button.astro';
 
 // Cards
-export { default as FeatureCard } from './cards/FeatureCard.astro';
+export { default as Card } from './cards/Card.astro';
 
 // Sections
 export { default as TextSection } from './sections/TextSection.astro';

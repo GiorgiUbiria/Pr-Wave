@@ -1,6 +1,7 @@
 ---
 import Layout from '../../../layouts/Page.astro';
 import Card from '../../../components/cards/Card.astro';
+import { ThreeColumnTextSection } from '@components/odyssey-theme';
 
 const seo = {
 	title: 'Services | Pr Wave',
@@ -9,5 +10,15 @@ const seo = {
 ---
 
 <Layout {seo}>
-	<Card />
+	<ThreeColumnTextSection>
+		<div slot="column-1-body">
+			<Card />
+		</div>
+		<div slot="column-2-body">
+			<Card />
+		</div>
+		<div slot="column-3-body">
+			<Card />
+		</div>
+	</ThreeColumnTextSection>
 </Layout>
