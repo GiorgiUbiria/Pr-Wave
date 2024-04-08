@@ -4,8 +4,20 @@
 <script is:inline>
 	const doc = document.firstElementChild;
 	const localStorageTheme = localStorage.getItem('theme');
+	const checkbox = document.querySelector('#hide-checkbox');
 
 	if (localStorageTheme !== null) {
 		doc.setAttribute('data-theme', localStorageTheme);
+		checkbox.checked = localStorageTheme === 'dark';
+	}
+
+	function toggle() {
+		const theme = checkbox.checked ? 'dark' : 'ocean';
+		doc.setAttribute('data-theme', theme);
+		localStorage.setItem('theme', theme);
+	}
+
+	if (checkbox) {
+		checkbox.addEventListener('change', toggle);
 	}
 </script>
