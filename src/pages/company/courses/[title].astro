@@ -1,0 +1,10 @@
+---
+export function getStaticPaths() {
+  return [
+    {params: {title: 'pirveli'}},
+    {params: {title: 'meore'}},
+  ];
+}
+
+const { title } = Astro.params;
+---

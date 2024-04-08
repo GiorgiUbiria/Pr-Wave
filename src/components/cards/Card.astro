@@ -1,18 +1,17 @@
 ---
+const { url, title, description } = Astro.props;
 ---
 
 <div class="card-hover">
 	<div class="card-hover__content">
 		<h3 class="card-hover__title">
-			მოსამზადებელი <span>ტექნიკური</span> სამუშაოები
+			<span>{title}</span>
 		</h3>
 		<p class="card-hover__text">
-			Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia
-			quisquam doloremque nostrum laboriosam, blanditiis libero corporis
-			nulla a aut?
+			{description}
 		</p>
-		<a href="/company/contact" class="card-hover__link">
-			<span style="font-size: 0.75rem">დაგვიკავშირდით</span>
+		<a href={url} class="card-hover__link">
+			<span style="font-size: 0.75rem">გაიგეთ მეტი</span>
 			<svg
 				fill="none"
 				viewBox="0 0 24 24"

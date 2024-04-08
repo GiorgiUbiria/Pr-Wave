@@ -2,6 +2,7 @@
 import Layout from '../../../layouts/Page.astro';
 import Card from '../../../components/cards/Card.astro';
 import { TwoColumnTextSection, Container } from '@components/odyssey-theme';
+import { longTermServices, oneOffServices } from './services';
 
 export const prerender = true;
 
@@ -16,27 +17,47 @@ const seo = {
 		<h2 class="center--heading">გრძელვადიანი სერვისები</h2>
 		<TwoColumnTextSection>
 			<div slot="column-1-body">
-				<Card />
+				<Card
+					title={longTermServices[0].title}
+					description={longTermServices[0].description}
+                    back_description={longTermServices[0].back_description}
+                    url=`/company/services/${longTermServices[0].url}`
+				/>
 			</div>
 			<div slot="column-2-body">
-				<Card />
+				<Card
+					title={longTermServices[1].title}
+					description={longTermServices[1].description}
+                    back_description={longTermServices[1].back_description}
+                    url=`/company/services/${longTermServices[1].url}`
+				/>
 			</div>
 		</TwoColumnTextSection>
 		<h2 class="center--heading">ერთჯერადი სერვისები</h2>
 		<TwoColumnTextSection>
 			<div slot="column-1-body">
-				<Card />
+				<Card
+					title={oneOffServices[0].title}
+					description={oneOffServices[0].description}
+                    back_description={oneOffServices[0].back_description}
+                    url=`/company/services/${oneOffServices[0].url}`
+				/>
 			</div>
 			<div slot="column-2-body">
-				<Card />
+				<Card
+					title={oneOffServices[1].title}
+					description={oneOffServices[1].description}
+                    back_description={oneOffServices[1].back_description}
+                    url=`/company/services/${oneOffServices[1].url}`
+				/>
 			</div>
 		</TwoColumnTextSection>
 	</Container>
 </Layout>
 
 <style>
-    .center--heading {
-        text-align: center;
-        font-size: 36px;
-    }
+	.center--heading {
+		text-align: center;
+		font-size: 36px;
+	}
 </style>
