@@ -78,8 +78,37 @@ import { Image } from 'astro:assets';
 		transition: 0.3s linear;
 		cursor: pointer;
 	}
+
 	img:hover {
 		--_i: 10%;
 		filter: grayscale(0);
+	}
+
+	h1::before {
+		transform: scaleX(0);
+		transform-origin: bottom right;
+	}
+
+	h1:hover::before {
+		transform: scaleX(1);
+		transform-origin: bottom left;
+	}
+
+	h1::before {
+		content: ' ';
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		inset: 0 0 0 0;
+		background: var(--theme-primary-hover);
+		z-index: -1;
+		transition: transform 0.3s ease;
+	}
+
+	h1 {
+		position: relative;
 	}
 </style>
