@@ -3,6 +3,10 @@ import Layout from '../../../layouts/Page.astro';
 import Card from '../../../components/cards/Card.astro';
 import { TwoColumnTextSection, Container } from '@components/odyssey-theme';
 
+import {courses} from './courses'
+
+export const prerender = true;
+
 const seo = {
 	title: 'Courses | Pr Wave',
 	description: 'Courses Page',
@@ -13,10 +17,18 @@ const seo = {
 	<Container>
 		<TwoColumnTextSection>
 			<div slot="column-1-body">
-				<Card />
+				<Card
+                    title={courses[0].title}
+                    description={courses[0].description}
+                    url={courses[0].url}
+                />
 			</div>
 			<div slot="column-2-body">
-				<Card />
+				<Card
+                    title={courses[1].title}
+                    description={courses[1].description}
+                    url={courses[1].url}
+                />
 			</div>
 		</TwoColumnTextSection>
 	</Container>

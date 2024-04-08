@@ -8,7 +8,7 @@ export function getStaticPaths() {
   ];
 }
 
-import { Container } from '@components/odyssey-theme';
+import { Container, TextSection } from '@components/odyssey-theme';
 import Layout from '../../../layouts/Page.astro';
 import { longTermServices, oneOffServices } from './services';
 
@@ -18,6 +18,8 @@ const { info } = Astro.props;
 
 <Layout>
     <Container>
-        <h1>{info.title}</h1>
+        <TextSection>
+            <h1>{info.title}</h1>
+        </TextSection>
     </Container>
 </Layout>

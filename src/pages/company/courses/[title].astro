@@ -1,10 +1,23 @@
 ---
 export function getStaticPaths() {
   return [
-    {params: {title: 'pirveli'}},
-    {params: {title: 'meore'}},
+    {params: {title: 'grdzeli'}, props: {info: courses[0]}},
+    {params: {title: 'mokle'}, props: {info: courses[1]}},
   ];
 }
 
-const { title } = Astro.params;
+import { Container, TextSection } from '@components/odyssey-theme';
+import Layout from '../../../layouts/Page.astro';
+import {courses} from './courses';
+
+
+const { info } = Astro.props;
 ---
+
+<Layout>
+    <Container>
+        <TextSection>
+            <h1>{info.title}</h1>
+        </TextSection>
+    </Container>
+</Layout>
