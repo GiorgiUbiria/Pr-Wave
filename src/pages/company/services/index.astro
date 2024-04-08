@@ -1,7 +1,7 @@
 ---
 import Layout from '../../../layouts/Page.astro';
 import Card from '../../../components/cards/Card.astro';
-import { ThreeColumnTextSection } from '@components/odyssey-theme';
+import { TwoColumnTextSection, Container } from '@components/odyssey-theme';
 
 export const prerender = true;
 
@@ -12,15 +12,31 @@ const seo = {
 ---
 
 <Layout {seo}>
-	<ThreeColumnTextSection>
-		<div slot="column-1-body">
-			<Card />
-		</div>
-		<div slot="column-2-body">
-			<Card />
-		</div>
-		<div slot="column-3-body">
-			<Card />
-		</div>
-	</ThreeColumnTextSection>
+	<Container>
+		<h2 class="center--heading">გრძელვადიანი სერვისები</h2>
+		<TwoColumnTextSection>
+			<div slot="column-1-body">
+				<Card />
+			</div>
+			<div slot="column-2-body">
+				<Card />
+			</div>
+		</TwoColumnTextSection>
+		<h2 class="center--heading">ერთჯერადი სერვისები</h2>
+		<TwoColumnTextSection>
+			<div slot="column-1-body">
+				<Card />
+			</div>
+			<div slot="column-2-body">
+				<Card />
+			</div>
+		</TwoColumnTextSection>
+	</Container>
 </Layout>
+
+<style>
+    .center--heading {
+        text-align: center;
+        font-size: 36px;
+    }
+</style>
