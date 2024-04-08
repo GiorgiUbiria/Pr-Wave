@@ -1,7 +1,7 @@
 {
   "$schema": "https://frontmatter.codes/frontmatter.schema.json",
   "frontMatter.framework.id": "astro",
-  "frontMatter.preview.host": "http://localhost:4321/",
+  "frontMatter.preview.host": "http://localhost:4321",
   "frontMatter.content.publicFolder": "public",
   "frontMatter.content.defaultFileType": "mdx",
   "frontMatter.content.pageFolders": [
@@ -14,15 +14,12 @@
     {
       "name": "default",
       "pageBundle": false,
-      "previewPath": "'blog/posts'",
-      "filePrefix": null,
-      "clearEmpty": true,
+      "previewPath": "'/blog/posts/",
       "fields": [
         {
           "title": "Title",
           "name": "title",
-          "type": "string",
-          "single": true
+          "type": "string"
         },
         {
           "title": "Description",
@@ -31,16 +28,50 @@
         },
         {
           "title": "Publishing date",
-          "name": "pubDate",
+          "name": "date",
           "type": "datetime",
           "default": "{{now}}",
           "isPublishDate": true
         },
         {
           "title": "Content preview",
-          "name": "heroImage",
-          "type": "image",
-          "isPreviewImage": true
+          "name": "preview",
+          "type": "image"
+        },
+        {
+          "title": "Is in draft",
+          "name": "draft",
+          "type": "draft"
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "Categories",
+          "name": "categories",
+          "type": "categories"
+        },
+        {
+          "title": "layout",
+          "name": "layout",
+          "type": "string"
+        },
+        {
+          "title": "featuredImage",
+          "name": "featuredImage",
+          "type": "image"
+        },
+        {
+          "title": "pubDate",
+          "name": "pubDate",
+          "type": "datetime"
+        },
+        {
+          "title": "excerpt",
+          "name": "excerpt",
+          "type": "string"
         }
       ]
     }
