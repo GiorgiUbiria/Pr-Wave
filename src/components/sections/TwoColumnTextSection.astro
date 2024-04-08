@@ -3,25 +3,21 @@ import Container from '../core/Container.astro';
 ---
 
 <Container>
-	<section class="three-col-text__section">
-		<div class="three-col-text__column">
+	<section class="two-col-text__section">
+		<div class="two-col-text__column">
 			<slot name="column-1-body" />
 			<slot name="column-1-cta" />
 		</div>
-		<div class="three-col-text__column">
+		<div class="two-col-text__column">
 			<slot name="column-2-body" />
 			<slot name="column-2-cta" />
-		</div>
-		<div class="three-col-text__column">
-			<slot name="column-3-body" />
-			<slot name="column-3-cta" />
 		</div>
 	</section>
 </Container>
 
 <style>
-	.three-col-text__section {
-		--column-count: 3;
+	.two-col-text__section {
+		--column-count: 2;
 		--column-width: calc(100% / var(--column-count));
 		margin: var(--section-margin) auto;
 		display: flex;
@@ -29,7 +25,7 @@ import Container from '../core/Container.astro';
 		text-align: center;
 		justify-content: space-evenly;
 	}
-	.three-col-text__column {
+	.two-col-text__column {
 		width: var(--column-width);
 		margin-bottom: 2rem;
 		padding: 1rem;
@@ -40,14 +36,8 @@ import Container from '../core/Container.astro';
 	}
 
 	@media (max-width: 1200px) {
-		.three-col-text__section {
-			--column-count: 2;
-		}
-	}
-	@media (max-width: 768px) {
-		.three-col-text__section {
+		.two-col-text__section {
 			--column-count: 1;
 		}
 	}
 </style>
-
