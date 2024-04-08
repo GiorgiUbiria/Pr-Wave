@@ -36,13 +36,12 @@ const { footerSocials, copyrightName, background, color } =
     <div class="footer-copyright__container">
       <p> &copy; {new Date().getFullYear()}. ყველა უფლება დაცულია | {copyrightName}</p>
     </div>
-
   </Container>
 </footer>
 
 <style>
   footer {
-    --footer-bg: var(--theme-primary);
+    --footer-bg: #1e293b;
     --footer-color: var(--theme-on-primary);
     min-height: 27vh;
     background-color: var(--footer-bg);
@@ -86,6 +85,11 @@ const { footerSocials, copyrightName, background, color } =
     height: 30px;
   }
   @media (max-width: 768px) {
+    .footer-grid__container {
+      padding: 5vh 0;
+    }
+  }
+  @media (max-width: 600px) {
     .footer-grid__container {
       padding: 5vh 0;
     }
