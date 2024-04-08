@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Page.astro';
+import { Container, TextCardSection, Button } from '@components/odyssey-theme';
 
 const seo = {
 	title: 'Masterclasses | Pr Wave',
@@ -8,4 +9,13 @@ const seo = {
 ---
 
 <Layout {seo}>
+	<Container>
+		<TextCardSection>
+			<h1>:(</h1>
+			<h2>მასტერკლასი ჯერ-ჯერობით დაგეგმილი არ არის...</h2>
+			<div class="cta-buttons__container">
+				<Button href="/">დაბრუნება</Button>
+			</div>
+		</TextCardSection>
+	</Container>
 </Layout>
