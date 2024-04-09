@@ -24,7 +24,7 @@
 	</label>
 </div>
 
-<script>
+<script is:inline>
 	function toggleTheme() {
 		const doc = document.firstElementChild;
 		let theme = localStorage.getItem('theme');
@@ -58,8 +58,16 @@
 
 		const checkbox = document.querySelector('#hide-checkbox');
 		if (checkbox) {
+			checkbox.checked = theme === 'ocean';
 			checkbox.addEventListener('change', toggle);
 		}
+
+		window.addEventListener('storage', function (event) {
+			if (event.key === 'theme') {
+				theme = event.newValue;
+				checkbox.checked = theme === 'ocean';
+			}
+		});
 	}
 
 	toggleTheme();

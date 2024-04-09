@@ -7,8 +7,8 @@ const resend = new Resend(
 
 export const GET: APIRoute = async ({ params, request }) => {
     const send = await resend.emails.send({
-        from: "ubiriagiorgi8@gmail.com",
-        to: "lei85la@gmail.com",
+        from: "foryou@prwave.net",
+        to: "ubiriagiorgi8@gmail.com",
         subject: "Something",
         html: "<p> paragraph </p>",
         text: "Hi",
@@ -18,13 +18,21 @@ export const GET: APIRoute = async ({ params, request }) => {
         return new Response(
             JSON.stringify({
                 message: send.data,
-            })
+            }),
+            {
+                status: 200,
+                statusText: "OK",
+            }
         )
     } else {
         return new Response(
             JSON.stringify({
                 message: send.error,
-            })
+            }),
+            {
+                status: 500,
+                statusText: "Internal Server Error",
+            }
         )
     }
 }
