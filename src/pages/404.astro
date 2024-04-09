@@ -1,8 +1,6 @@
 ---
 import { Button, Container, TextCardSection } from '@components/odyssey-theme';
-import { Image } from 'astro:assets';
 import Layout from '../layouts/Page.astro';
-import NotFoundImage from '../images/404.webp';
 
 const seo = {
 	title: 'Page Not Found | Pr Wave.',
@@ -19,7 +17,6 @@ const seo = {
 			<div class="cta-buttons__container">
 				<Button href="/">დაბრუნება</Button>
 			</div>
-			<Image src={NotFoundImage} alt="404" width={400} height={400} />
 		</TextCardSection>
 	</Container>
 </Layout>

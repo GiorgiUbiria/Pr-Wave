@@ -1,12 +1,16 @@
-import React, { Component } from 'react';
-import { FacebookProvider, CustomChat } from 'react-facebook';
+import React, { Suspense, lazy } from 'react';
+import './ChatLoader.css';
 
-export default class FacebookChat extends Component {
-    render() {
-        return (
-            <FacebookProvider appId="971723654539716" chatSupport>
-                <CustomChat pageId="112996710213848" minimized={true} />
-            </FacebookProvider>
-        );
-    }
-}
+const Chat = lazy(() => import('./Chat.tsx'));
+
+const CircularLoader = () => (
+    <div className="loader"></div>
+);
+
+const FacebookChat = () => (
+    <Suspense fallback={<CircularLoader />}>
+        <Chat />
+    </Suspense>
+);
+
+export default FacebookChat;

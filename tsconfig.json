@@ -3,6 +3,7 @@
         "experimentalDecorators": true,
         "useDefineForClassFields": false,
         "allowSyntheticDefaultImports": true,
+        "allowImportingTsExtensions": true,
         "jsx": "react",
         "module": "es2020",
         "moduleResolution": "nodenext",
