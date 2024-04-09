@@ -11,6 +11,9 @@ import {
 	CtaCardSection,
 } from '@components/odyssey-theme';
 import TextAndImageHero from '../components/sections/heros/TextAndImageHero.astro';
+import { Image } from 'astro:assets';
+import LandingHeroImage from '../images/landing-hero-1.jpg';
+import LandingHeroStickyImage from '../images/landing-sticky.jpg';
 
 export const prerender = true;
 
@@ -37,10 +40,12 @@ const seo = {
 			>
 		</div>
 		<picture slot="image-container">
-			<img
-				src="/assets/images/landing-1/landing-hero-1.jpg"
+			<Image
+				src={LandingHeroImage}
 				alt="Pr Wave"
 				id="home-hero-image"
+                width="700"
+                height="900"
 			/>
 		</picture>
 	</TextAndImageHero>
@@ -111,10 +116,11 @@ const seo = {
 			</p>
 		</div>
 		<picture slot="image-container">
-			<img
-				src="/assets/images/landing-1/landing-sticky.jpg"
+			<Image
+				src={LandingHeroStickyImage}
 				alt="Pr Wave"
-				loading="lazy"
+                width="900"
+                height="600"
 			/>
 		</picture>
 	</StickyTextImageSection>
