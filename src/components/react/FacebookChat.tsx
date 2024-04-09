@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import './ChatLoader.css';
+import './chatLoader.css';
 
 const Chat = lazy(() => import('./Chat.tsx'));
 
