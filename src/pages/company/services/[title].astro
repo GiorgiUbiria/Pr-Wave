@@ -1,25 +1,108 @@
 ---
 export function getStaticPaths() {
-  return [
-    {params: {title: 'pirveli-grdzeli'}, props: {info: longTermServices[0]}},
-    {params: {title: 'meore-grdzeli'}, props: {info: longTermServices[1]}},
-    {params: {title: 'pirveli-erteuli'}, props: {info: oneOffServices[0]}},
-    {params: {title: 'meore-erteuli'}, props: {info: oneOffServices[1]}},
-  ];
+	return [
+		{
+			params: { title: 'pirveli-grdzeli' },
+			props: { info: longTermServices[0] },
+		},
+		{
+			params: { title: 'meore-grdzeli' },
+			props: { info: longTermServices[1] },
+		},
+		{
+			params: { title: 'pirveli-erteuli' },
+			props: { info: oneOffServices[0] },
+		},
+		{
+			params: { title: 'meore-erteuli' },
+			props: { info: oneOffServices[1] },
+		},
+	];
 }
 
-import { Container, TextSection } from '@components/odyssey-theme';
+import ServiceContactForm from '../../../components/forms/ServiceContactForm.astro';
+import { Container} from '@components/odyssey-theme';
 import Layout from '../../../layouts/Page.astro';
 import { longTermServices, oneOffServices } from './services';
 
-
 const { info } = Astro.props;
+
+const seo = {
+	title: 'Services | Pr Wave',
+	description: 'Services Page',
+};
 ---
 
-<Layout>
-    <Container>
-        <TextSection>
-            <h1>{info.title}</h1>
-        </TextSection>
-    </Container>
+<Layout {seo}>
+	<Container>
+		<section class="contact-hero__section">
+			<div class="contact-hero__text-section">
+				<h1>{info.title}</h1>
+				<p>
+{ info.description }
+				</p>
+				<div>
+					<p>
+						<em
+							><a href="tel:+995597600882">(995) 597-60-08-82</a>
+						</em> •
+						<em>
+							<a href="mailto:lei85la@gmail.com"
+								>lei85la@gmail.com</a
+							>
+						</em>
+					</p>
+				</div>
+			</div>
+			<div class="col-2__container">
+				<ServiceContactForm />
+			</div>
+		</section>
+	</Container>
 </Layout>
+
+<style>
+	.contact-hero__section {
+		margin: var(--section-margin) auto;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		min-height: calc(90vh - var(--navbar-height));
+		gap: 3rem;
+	}
+	.contact-hero__text-section {
+		padding: 2rem;
+		display: flex;
+		flex-direction: column;
+        justify-content: center;
+		background-color: var(--theme-surface-1);
+		border-radius: var(--theme-shape-radius);
+		max-width: 100%; /* Ensure it doesn't exceed the viewport width */
+		box-sizing: border-box; /* Include padding in width calculation */
+		word-break: break-word; /* Break words if they exceed container width */
+	}
+	.col-2__container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	@media (max-width: 768px) {
+		.contact-hero__section {
+			grid-template-columns: 1fr;
+		}
+		.content-hero__text-section {
+			align-items: center; /* Center content horizontally */
+			text-align: center; /* Center text */
+		}
+		h1 {
+			font-size: 32px;
+		}
+		p {
+			font-size: 14px;
+		}
+	}
+	@media (max-width: 1352px) {
+		h1 {
+			font-size: 48px;
+		}
+	}
+</style>

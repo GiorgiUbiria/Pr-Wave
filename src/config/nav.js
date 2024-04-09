@@ -15,4 +15,12 @@ export const nav = [
         title: 'კონტაქტი',
         slug: '/company/contact',
     },
+    {
+        title: 'სერვისები',
+        slug: '/company/services',
+    },
+    {
+        title: 'კურსები',
+        slug: '/company/courses',
+    },
 ];

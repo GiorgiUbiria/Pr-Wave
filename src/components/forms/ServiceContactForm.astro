@@ -1,0 +1,32 @@
+---
+import {
+	Button,
+	FormInput,
+	FormSelect,
+	FormTextarea,
+} from '@components/odyssey-theme';
+
+const selectOptions = ['პირველი ხანგრძლივი', 'მეორე ხანგრძლივი', 'პირველი ერთჯერადი', 'მეორე ერთჯერადი'];
+---
+
+<form name="Contact Form" method="POST">
+	<FormInput type="text" label="სახელი" name="Name" placeholder="John Doe" />
+	<FormInput
+		type="email"
+		label="მეილი"
+		name="Email"
+		placeholder="template@example.com"
+	/>
+	<FormSelect label="რა სახის სერვისს ირჩევთ?" options={selectOptions} />
+	<FormTextarea label="წერილი" name="Message" placeholder="თქვენი წერილი..."
+	/>
+	<Button>გაგზავნა</Button>
+</form>
+
+<style>
+	form {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
+</style>
