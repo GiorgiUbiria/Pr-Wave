@@ -78,6 +78,7 @@ const seo = {
 		grid-template-columns: 2fr 1fr;
 		min-height: calc(90vh - var(--navbar-height));
 		gap: 3rem;
+        align-items: start; /* Align items to the start */
 	}
 	.contact-hero__text-section {
 		padding: 1.5rem;
@@ -92,7 +93,8 @@ const seo = {
 	.col-2__container {
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
+        justify-content: flex-start; /* Align content to the start */
+        min-height: min-content; /
 	}
     .syllabus {
         display: flex;
