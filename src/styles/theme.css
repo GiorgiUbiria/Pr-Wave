@@ -31,6 +31,7 @@
     --theme-blog-post-header-width: 1200px;
 
     /* Theme Fonts */
+    --theme-font-family-georgian-header: 'ArchyEDT-Bold', 'BPG Boxo-Boxo', Cambia, Georgia, Times, serif;
     --theme-font-family-georgian: 'BPG Boxo-Boxo', 'Times New Roman', Cambia, Georgia, Times, serif;
     --theme-font-family-serif: 'Roboto Serif', Georgia, Cambria, 'Times New Roman',
         Times, serif;

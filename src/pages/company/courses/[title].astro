@@ -1,16 +1,15 @@
 ---
 export function getStaticPaths() {
-  return [
-    {params: {title: 'grdzeli'}, props: {info: courses[0]}},
-    {params: {title: 'mokle'}, props: {info: courses[1]}},
-  ];
+	return [
+		{ params: { title: 'grdzeli' }, props: { info: courses[0] } },
+		{ params: { title: 'mokle' }, props: { info: courses[1] } },
+	];
 }
 
 import CourseContactForm from '../../../components/forms/CourseContactForm.astro';
 import { Container, TextSection } from '@components/odyssey-theme';
 import Layout from '../../../layouts/Page.astro';
-import {courses} from './courses';
-
+import { courses } from './courses';
 
 const { info } = Astro.props;
 const seo = {
@@ -25,7 +24,7 @@ const seo = {
 			<div class="contact-hero__text-section">
 				<h1>{info.title}</h1>
 				<p>
-                    { info.description }
+					{info.description}
 				</p>
 				<div>
 					<p>
@@ -59,7 +58,7 @@ const seo = {
 		padding: 2rem;
 		display: flex;
 		flex-direction: column;
-        justify-content: center;
+		justify-content: center;
 		background-color: var(--theme-surface-1);
 		border-radius: var(--theme-shape-radius);
 		max-width: 100%; /* Ensure it doesn't exceed the viewport width */
@@ -71,21 +70,15 @@ const seo = {
 		flex-direction: column;
 		justify-content: center;
 	}
-	@media (max-width: 768px) {
-		.contact-hero__section {
-			grid-template-columns: 1fr;
-		}
-		.content-hero__text-section {
-			align-items: center; /* Center content horizontally */
-			text-align: center; /* Center text */
-		}
-		h1 {
-			font-size: 32px;
-		}
-		p {
-			font-size: 14px;
-		}
-	}
+    @media (max-width: 768px) {
+        .contact-hero__section {
+            grid-template-columns: 1fr;
+        }
+        .contact-hero__text-section {
+            align-items: center; /* Center horizontally */
+            text-align: center;
+        }
+    }
 	@media (max-width: 1352px) {
 		h1 {
 			font-size: 48px;

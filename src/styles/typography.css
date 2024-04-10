@@ -1,3 +1,16 @@
+/* archyedt-bold-webfont */
+@font-face {
+    font-family: 'ArchyEDT-Bold';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: local(''),
+        url('/assets/fonts/archyedt-bold-webfont.woff2') format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('/assets/fonts/archyedt-bold-webfont.woff') format('woff');
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
 /* bpg-boxo-boxo-webfont */
 @font-face {
     font-family: 'BPG Boxo-Boxo';
@@ -110,7 +123,7 @@ body {
 h1,
 h2,
 h3 {
-    font-family: var(--theme-font-family-georgian);
+    font-family: var(--theme-font-family-georgian-header);
     font-weight: 700;
 }
 
@@ -148,6 +161,10 @@ h5,
 h6,
 p {
     margin: 0 0 1rem 0;
+}
+
+span {
+    font-family: var(--theme-font-family-serif);
 }
 
 blockquote {
