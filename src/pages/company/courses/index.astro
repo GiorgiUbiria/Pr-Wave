@@ -1,7 +1,7 @@
 ---
 import Layout from '../../../layouts/Page.astro';
 import Card from '../../../components/cards/Card.astro';
-import { TwoColumnTextSection, Container } from '@components/odyssey-theme';
+import { ThreeColumnTextSection, Container } from '@components/odyssey-theme';
 
 import {courses} from './courses'
 
@@ -15,7 +15,7 @@ const seo = {
 
 <Layout {seo}>
 	<Container>
-		<TwoColumnTextSection>
+		<ThreeColumnTextSection>
 			<div slot="column-1-body">
 				<Card
                     title={courses[0].title}
@@ -30,6 +30,13 @@ const seo = {
                     url={courses[1].url}
                 />
 			</div>
-		</TwoColumnTextSection>
+			<div slot="column-3-body">
+				<Card
+                    title={courses[2].title}
+                    description={courses[2].description}
+                    url={courses[2].url}
+                />
+			</div>
+		</ThreeColumnTextSection>
 	</Container>
 </Layout>

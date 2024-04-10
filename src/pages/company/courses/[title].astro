@@ -7,7 +7,7 @@ export function getStaticPaths() {
 }
 
 import CourseContactForm from '../../../components/forms/CourseContactForm.astro';
-import { Container, TextSection } from '@components/odyssey-theme';
+import { Container } from '@components/odyssey-theme';
 import Layout from '../../../layouts/Page.astro';
 import { courses } from './courses';
 
@@ -61,9 +61,9 @@ const seo = {
 		justify-content: center;
 		background-color: var(--theme-surface-1);
 		border-radius: var(--theme-shape-radius);
-		max-width: 100%; /* Ensure it doesn't exceed the viewport width */
-		box-sizing: border-box; /* Include padding in width calculation */
-		word-break: break-word; /* Break words if they exceed container width */
+		max-width: 100%;
+		box-sizing: border-box;
+		word-break: break-word;
 	}
 	.col-2__container {
 		display: flex;
@@ -75,7 +75,7 @@ const seo = {
             grid-template-columns: 1fr;
         }
         .contact-hero__text-section {
-            align-items: center; /* Center horizontally */
+            align-items: center;
             text-align: center;
         }
     }
