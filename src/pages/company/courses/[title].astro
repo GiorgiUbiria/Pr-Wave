@@ -24,36 +24,49 @@ const seo = {
 <Layout {seo}>
 	<Container>
 		<section class="contact-hero__section">
-			<div class="contact-hero__text-section">
-				<h1>{info.title}</h1>
-				<p>
-					{info.description}
-				</p>
-				<div class="syllabus">
-                    <h3> კურსის სილაბუსი: </h3>
-                    {syllabus.map((day, index) => (
-                        <Accordion day={day.day} content={day.content} hidden={index >= 9 ? 'hidden' : ''} open={index === 0 ? true : false} />
-                    ))}
-                    <button id="toggleButton">მეტის ჩვენება</button>
+			<div class="text-section">
+				<div class="contact-hero__text-section">
+					<h1>{info.title}</h1>
+					<p>
+						{info.description}
+					</p>
 				</div>
 			</div>
-			<div class="col-2__container">
-                <div class="cube">
-                    Video
+            <div class="middle-section">
+                <div class="info-section">
+                    <div class="video-section">
+                        <div class="cube">
+                            Video
+                        </div>
+                    </div>
+                    <div class="details-section">
+                        <div class="cubic_details">
+                            <h3> Details </h3>
+                            <p> First </p>
+                            <p> Second </p>
+                            <p> Third </p>
+                            <p> Fourth </p>
+                            <p> Fifth </p>
+                        </div>
+                    </div>
+                    <div class="form-section">
+                        <CourseContactForm />
+                    </div>
                 </div>
-                <div class="cubic_details">
-                    <h3> Details </h3>
-                    <p> First </p>
-                    <p> Second </p>
-                    <p> Third </p>
-                    <p> Fourth </p>
-                    <p> Fifth </p>
+                <div class="syllabus-section">
+                    <div class="syllabus">
+                        <h3> კურსის სილაბუსი: </h3>
+                        {syllabus.map((day, index) => (
+                            <Accordion day={day.day} content={day.content} hidden={index >= 9 ? 'hidden' : ''} open={index === 0 ? true : false} />
+                        ))}
+                        <button id="toggleButton">მეტის ჩვენება</button>
+                    </div>
                 </div>
-				<CourseContactForm />
-			</div>
+            </div>
 		</section>
 	</Container>
 </Layout>
+
 
 <script is:inline>
     document.addEventListener('DOMContentLoaded', function() {
@@ -75,10 +88,10 @@ const seo = {
 	.contact-hero__section {
 		margin: var(--section-margin) auto;
 		display: grid;
-		grid-template-columns: 2fr 1fr;
+		grid-template-columns: 1fr;
 		min-height: calc(90vh - var(--navbar-height));
-		gap: 3rem;
-        align-items: start; /* Align items to the start */
+		gap: 1.5rem;
+        align-items: start;
 	}
 	.contact-hero__text-section {
 		padding: 1.5rem;
@@ -90,6 +103,13 @@ const seo = {
 		box-sizing: border-box;
 		word-break: break-word;
 	}
+	.middle-section {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		min-height: calc(90vh - var(--navbar-height));
+		gap: 3rem;
+        align-items: start;
+	}
 	.col-2__container {
 		display: flex;
 		flex-direction: column;
@@ -97,6 +117,9 @@ const seo = {
         min-height: min-content; /
 	}
     .syllabus {
+		background-color: var(--theme-surface-1);
+		border-radius: var(--theme-shape-radius);
+        padding: 1.5rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
