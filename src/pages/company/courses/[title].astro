@@ -113,8 +113,8 @@ const seo = {
 	.col-2__container {
 		display: flex;
 		flex-direction: column;
-        justify-content: flex-start; /* Align content to the start */
-        min-height: min-content; /
+        justify-content: flex-start;
+        min-height: min-content;
 	}
     .syllabus {
 		background-color: var(--theme-surface-1);
@@ -137,9 +137,13 @@ const seo = {
         align-items: center;
     }
     @media (max-width: 768px) {
-        .contact-hero__section {
+        .middle-section {
             grid-template-columns: 1fr;
         }
+        .video-section { order: 1; }
+        .details-section { order: 2; }
+        .syllabus-section { order: 2; }
+        .form-section { order: 3; }
     }
 	@media (max-width: 1352px) {
 		h1 {
