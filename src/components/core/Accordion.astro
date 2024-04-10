@@ -2,7 +2,7 @@
 const { day, content, hidden, open } = Astro.props;
 ---
 
-<details open={open} class={hidden}>
+<details {open} class={hidden}>
 	<summary> დღე {day} </summary>
 	<div>
 		{content}
@@ -69,8 +69,13 @@ const { day, content, hidden, open } = Astro.props;
 		content: '↑';
 	}
 
+	details[open] summary:hover::before {
+		background-color: var(--theme-primary-hover);
+	}
+
 	summary:hover {
 		background-color: var(--theme-primary-hover);
+		color: #000;
 	}
 
 	a {
