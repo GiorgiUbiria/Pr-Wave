@@ -1,17 +1,17 @@
 export const courses = [
     {
-        title: "ხანგრძლივი კურსი",
-        description: "ხანგრძლივი კურსის აღწერა",
+        title: "SMM PLUS | სოციალური მედიის მარკეტინგის კურსი",
+        description: "SMM PLUS | სოციალური მედიის მარკეტინგის კურსის აღწერა",
         url: "/company/courses/grdzeli"
     },
     {
-        title: "მოკლე კურსი",
-        description: "მოკლე კურსის აღწერა",
+        title: "კონტენტ-მარკეტინგის ექსპრესს კურსი",
+        description: "კონტენტ-მარკეტინგის ექსპრესს კურსის აღწერა",
         url: "/company/courses/mokle"
     },
     {
-        title: "კიდევ ერთი მოკლე კურსი",
-        description: "ასევე მოკლე კურსის აღწერა",
+        title: "რეკლამირების ექსპრესს კურსი",
+        description: "რეკლამირების ექსპრესს კურსის აღწერა",
         url: "/company/courses/mokle-erteuli"
     },
 ]

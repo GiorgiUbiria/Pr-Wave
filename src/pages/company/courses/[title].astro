@@ -3,13 +3,16 @@ export function getStaticPaths() {
 	return [
 		{ params: { title: 'grdzeli' }, props: { info: courses[0] } },
 		{ params: { title: 'mokle' }, props: { info: courses[1] } },
+		{ params: { title: 'mokle-erteuli' }, props: { info: courses[2] } },
 	];
 }
 
 import CourseContactForm from '../../../components/forms/CourseContactForm.astro';
+import Accordion from '../../../components/core/Accordion.astro';
 import { Container } from '@components/odyssey-theme';
 import Layout from '../../../layouts/Page.astro';
 import { courses } from './courses';
+import { syllabus } from './syllabus';
 
 const { info } = Astro.props;
 const seo = {
@@ -26,39 +29,60 @@ const seo = {
 				<p>
 					{info.description}
 				</p>
-				<div>
-					<p>
-						<em
-							><a href="tel:+995597600882">(995) 597-60-08-82</a>
-						</em> •
-						<em>
-							<a href="mailto:lei85la@gmail.com"
-								>lei85la@gmail.com</a
-							>
-						</em>
-					</p>
+				<div class="syllabus">
+                    <h3> კურსის სილაბუსი: </h3>
+                    {syllabus.map((day, index) => (
+                        <Accordion day={day.day} content={day.content} hidden={index >= 6 ? 'hidden' : ''} open={index === 0 ? true : false} />
+                    ))}
+                    <button id="toggleButton">მეტის ჩვენება</button>
 				</div>
 			</div>
 			<div class="col-2__container">
+                <div class="cube">
+                    Video
+                </div>
+                <div class="cubic_details">
+                    <h3> Details </h3>
+                    <p> First </p>
+                    <p> Second </p>
+                    <p> Third </p>
+                    <p> Fourth </p>
+                    <p> Fifth </p>
+                </div>
 				<CourseContactForm />
 			</div>
 		</section>
 	</Container>
 </Layout>
 
+<script is:inline>
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggleButton = document.getElementById('toggleButton');
+        const accordionItems = document.querySelectorAll('.hidden');
+        let isExpanded = false;
+
+        toggleButton.addEventListener('click', function() {
+            accordionItems.forEach(item => {
+                item.classList.toggle('hidden');
+            });
+            isExpanded = !isExpanded;
+            toggleButton.textContent = isExpanded ? 'ნაკლების ჩვენება' : 'მეტის ჩვენება';
+        });
+    });
+</script>
+
 <style>
 	.contact-hero__section {
 		margin: var(--section-margin) auto;
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 2fr 1fr;
 		min-height: calc(90vh - var(--navbar-height));
 		gap: 3rem;
 	}
 	.contact-hero__text-section {
-		padding: 2rem;
+		padding: 1.5rem;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
 		background-color: var(--theme-surface-1);
 		border-radius: var(--theme-shape-radius);
 		max-width: 100%;
@@ -70,13 +94,26 @@ const seo = {
 		flex-direction: column;
 		justify-content: center;
 	}
+    .syllabus {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    .cube {
+        height: auto;
+        background-color: red;
+        border-box: 1px solid red;
+    }
+    .cubic_details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
     @media (max-width: 768px) {
         .contact-hero__section {
             grid-template-columns: 1fr;
-        }
-        .contact-hero__text-section {
-            align-items: center;
-            text-align: center;
         }
     }
 	@media (max-width: 1352px) {
