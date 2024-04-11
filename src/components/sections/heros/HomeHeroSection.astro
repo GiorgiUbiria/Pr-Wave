@@ -5,13 +5,15 @@ import OceanHeroImage from '../../../images/ocean-hero.jpg';
 import { Image } from 'astro:assets';
 ---
 
-<Container>
-	<section class="hero-section__section">
-		<div class="hero-section__text">
-			<h1>მოგესალმებით <span>PR WAVE</span>-ზე</h1>
-			<p>ყველაფერი სოციალურ მედიასა და მარკეტინგზე</p>
-			<ScrollDown />
-		</div>
+<section class="hero-section__section">
+	<div class="hero-section__text">
+		<h1>მოგესალმებით <span>PR WAVE</span>-ზე</h1>
+		<p>ყველაფერი სოციალურ მედიასა და მარკეტინგზე</p>
+        <div class="scrolldown">
+            <ScrollDown />
+        </div>
+	</div>
+	<Container>
 		<div class="hero-section__image">
 			<picture>
 				<Image
@@ -23,22 +25,32 @@ import { Image } from 'astro:assets';
 				/>
 			</picture>
 		</div>
-	</section>
-</Container>
+	</Container>
+</section>
 
 <style>
 	.hero-section__section {
+        padding-top: 4rem;
 		margin: var(--section-margin) auto;
 		min-height: clamp(90vh, 100vw, calc(100vh - var(--navbar-height)));
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		align-items: center;
 		gap: 1rem;
-		padding-bottom: 2rem;
+		padding-bottom: 4rem;
+        background-image: url('../../../images/ocean-hero.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-blend-mode: overlay;
+        background-color: rgba(0, 0, 0, 0.5);
+        background-attachment: fixed;
+		min-width: 100%;
 	}
 	.hero-section__text {
 		justify-self: center;
 		max-width: 25rem;
+        color: #fff;
 	}
 	.hero-btns__container {
 		display: flex;
@@ -62,6 +74,12 @@ import { Image } from 'astro:assets';
 		.hero-section__section {
 			grid-template-columns: 1fr;
 		}
+        .hero-section__text{
+            text-align: center;
+        }
+        .scrolldown {
+            margin-left: 45%;
+        }
 	}
 
 	.hidden {
@@ -78,7 +96,6 @@ import { Image } from 'astro:assets';
 		mask: var(--m);
 		filter: grayscale();
 		transition: 0.3s linear;
-		cursor: pointer;
 	}
 
 	img:hover {
@@ -86,17 +103,17 @@ import { Image } from 'astro:assets';
 		filter: grayscale(0);
 	}
 
-	h1::before {
+	.hero-section__text span::before {
 		transform: scaleX(0);
 		transform-origin: bottom right;
 	}
 
-	h1:hover::before {
+	.hero-section__text span:hover::before {
 		transform: scaleX(1);
 		transform-origin: bottom left;
 	}
 
-	h1::before {
+	.hero-section__text span::before {
 		content: ' ';
 		display: block;
 		position: absolute;
@@ -110,9 +127,10 @@ import { Image } from 'astro:assets';
 		transition: transform 0.3s ease;
 	}
 
-	h1 {
+	.hero-section__text span {
 		position: relative;
 	}
+
 	.hero-section__text span {
 		white-space: nowrap;
 		display: inline-block;
