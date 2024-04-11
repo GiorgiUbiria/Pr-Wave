@@ -2,27 +2,23 @@
 import {
 	Button,
 	FormInput,
-	FormSelect,
+    FormTextarea,
+    FormRadio,
 } from '@components/odyssey-theme';
-
-const selectOptions = [
-	'პირველი ხანგრძლივი',
-	'მეორე ხანგრძლივი',
-	'პირველი ერთჯერადი',
-	'მეორე ერთჯერადი',
-];
 ---
 
 <form name="Contact Form" method="POST">
-	<FormInput type="text" label="სახელი" name="Name" placeholder="John Doe" />
-	<FormInput type="tel" label="ტელეფონის ნომერი" name="Phone" placeholder="+995 555 555 555" />
+	<FormInput required=true type="text" label="სახელი" name="Name" placeholder="John Doe" />
+	<FormInput required=true type="tel" label="ტელეფონის ნომერი" name="Phone" placeholder="+995 555 555 555" />
 	<FormInput
 		type="email"
-		label="მეილი"
+		label="ელ. ფოსტა"
 		name="Email"
 		placeholder="template@example.com"
+        required=true
 	/>
-	<FormSelect label="რომელ კურსს ირჩევთ?" options={selectOptions} />
+    <FormRadio label="გაქვთ გამოცდილება სოციალური მედიის მართვის მიმართულებით?" required=true name="Experience" />
+    <FormTextarea label="მოკლედ მოგვიყევით,  რა მოლოდინი გაქვთ კურსიდან და სილაბუსის რომელი ნაწილი უფრო გაინტერესებთ  💙" name="Interest" placeholder="პასუხი..." />
 	<Button>რეგისტრაცია</Button>
 </form>
 

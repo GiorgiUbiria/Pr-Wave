@@ -1,0 +1,15 @@
+---
+const { label, name, options, required} = Astro.props;
+---
+
+<div class="form-field__container">
+  {label && <label>{label}</label>}
+  <label>
+    <input type="radio" name={name} value="yes" required={required} />
+        კი
+  </label>
+  <label>
+    <input type="radio" name={name} value="no" required={required} />
+       არა
+  </label>
+</div>
