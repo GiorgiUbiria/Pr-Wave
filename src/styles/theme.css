@@ -35,8 +35,6 @@
     --theme-font-family-georgian: 'ALK Rex Bold', 'Times New Roman', Cambia, Georgia, Times, serif;
     --theme-font-family-serif: 'Roboto Serif', Georgia, Cambria, 'Times New Roman',
         Times, serif;
-    --theme-font-family-sans: 'Lato', -apple-system, BlinkMacSystemFont,
-        sans-serif;
 }
 
 [data-theme='default'] {
