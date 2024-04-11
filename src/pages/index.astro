@@ -44,8 +44,8 @@ const seo = {
 				src={LandingHeroImage}
 				alt="Pr Wave"
 				id="home-hero-image"
-                width="700"
-                height="900"
+				width="700"
+				height="900"
 			/>
 		</picture>
 	</TextAndImageHero>
@@ -56,7 +56,7 @@ const seo = {
 	/>
 
 	<ThreeColumnTextSection>
-		<div slot="column-1-body">
+		<div slot="column-1-body" id="left-slide">
 			<h2>კურსი?</h2>
 			<p>
 				დიახ, სწავლება თანამედროვე მეთოდების გამოყენებით, მყუდრო
@@ -78,7 +78,7 @@ const seo = {
 		<Button slot="column-2-cta" outlined>
 			<a href="/company/masterclass"> გაიგეთ მეტი</a>
 		</Button>
-		<div slot="column-3-body">
+		<div slot="column-3-body" id="right-slide">
 			<h2>სხვა სერვისები?</h2>
 			<p>
 				რა თქმა უნდა, სწავლება თანამედროვე მეთოდების გამოყენებით, მყუდრო
@@ -98,29 +98,33 @@ const seo = {
 
 	<StickyTextImageSection>
 		<div slot="text-container">
-			<h2>ჩვენ გთავაზობთ</h2>
+			<h2>ჩვენ გთავაზობთ:</h2>
+            <hr />
 			<h3>ინტერაქტიული კურსი</h3>
 			<p>
 				სწავლება თანამედროვე მეთოდების გამოყენებით, მყუდრო ატმოსფერო,
 				24/7 დახმარება. თუ გსურს ახალ დონეზე ასვლა, ეს კურსი შენთვისაა.
 			</p>
+            <hr />
 			<h3>მასტერკლასები</h3>
 			<p>
 				სწავლება თანამედროვე მეთოდების გამოყენებით, მყუდრო ატმოსფერო,
 				24/7 დახმარება. თუ გსურს ახალ დონეზე ასვლა, ეს კურსი შენთვისაა.
 			</p>
+            <hr />
 			<h3>სხვა სერვისები</h3>
 			<p>
 				სწავლება თანამედროვე მეთოდების გამოყენებით, მყუდრო ატმოსფერო,
 				24/7 დახმარება. თუ გსურს ახალ დონეზე ასვლა, ეს კურსი შენთვისაა.
 			</p>
+            <hr />
 		</div>
 		<picture slot="image-container">
 			<Image
 				src={LandingHeroStickyImage}
 				alt="Pr Wave"
-                width="900"
-                height="600"
+				width="900"
+				height="600"
 			/>
 		</picture>
 	</StickyTextImageSection>
@@ -142,6 +146,40 @@ const seo = {
 	</CtaCardSection>
 </Layout>
 
+<script is:inline>
+	const leftSlide = document.getElementById('left-slide');
+	const rightSlide = document.getElementById('right-slide');
+
+	const options = {
+		root: null,
+		rootMargin: '0px',
+		threshold: 0.5,
+	};
+
+	const observer = new IntersectionObserver((entries, observer) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				if (
+					entry.target === leftSlide &&
+					entry.intersectionRatio >= 0.5
+				) {
+					entry.target.classList.add('slide-from-left');
+					observer.unobserve(entry.target);
+				} else if (
+					entry.target === rightSlide &&
+					entry.intersectionRatio >= 0.5
+				) {
+					entry.target.classList.add('slide-from-right');
+					observer.unobserve(entry.target);
+				}
+			}
+		});
+	}, options);
+
+	observer.observe(leftSlide);
+	observer.observe(rightSlide);
+</script>
+
 <style>
 	.feature-card__section {
 		margin: var(--section-margin) auto;
@@ -154,6 +192,50 @@ const seo = {
 	@media (max-width: 768px) {
 		.feature-card__grid {
 			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (min-width: 1280px) {
+		#right-slide {
+			opacity: 0;
+		}
+
+		#left-slide {
+			opacity: 0;
+		}
+
+		.slide-from-left {
+			animation: slideLeft 1s ease-in-out forwards;
+			transform: translateX(-100%);
+			opacity: 0;
+		}
+
+		.slide-from-right {
+			animation: slideRight 1s ease-in-out forwards;
+			transform: translateX(100%);
+			opacity: 0;
+		}
+
+		@keyframes slideLeft {
+			from {
+				transform: translateX(-100%);
+				opacity: 0;
+			}
+			to {
+				transform: translateX(0);
+				opacity: 1;
+			}
+		}
+
+		@keyframes slideRight {
+			from {
+				transform: translateX(100%);
+				opacity: 0;
+			}
+			to {
+				transform: translateX(0);
+				opacity: 1;
+			}
 		}
 	}
 </style>
