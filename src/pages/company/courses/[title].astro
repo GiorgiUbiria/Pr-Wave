@@ -39,13 +39,12 @@ const seo = {
                         </video>
                     </div>
                     <div class="details-section">
+                        <h3> კურსის დეტალები </h3>
                         <div class="cubic_details">
-                            <h3> Details </h3>
-                            <p> First </p>
-                            <p> Second </p>
-                            <p> Third </p>
-                            <p> Fourth </p>
-                            <p> Fifth </p>
+                            <p> 18 შეხვედრა </p>
+                            <p> Offline შეხვედრები </p>
+                            <p> Online შეხვედრები </p>
+                            <p> 24/7 დახმარება </p>
                         </div>
                     </div>
                     <div class="form-section">
@@ -124,20 +123,25 @@ const seo = {
         justify-content: center;
         gap: 1.5rem;
     }
-    .cube {
-        height: 300px;
-        background-color: red;
-        border-box: 1px solid red;
-    }
     .cubic_details {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        justify-content: space-between;
+        align-items: space-between;
+        width: 75%;
     }
     @media (max-width: 768px) {
         .middle-section {
             grid-template-columns: 1fr;
+        }
+        .cubic_details {
+            justify-content: center;
+            align-items: center;
+        }
+        .details-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         .video-section { order: 1; }
         .details-section { order: 2; }
