@@ -3,12 +3,12 @@
 
 <script is:inline>
 	const doc = document.firstElementChild;
-	const localStorageTheme = localStorage.getItem('theme');
 	const checkbox = document.querySelector('#hide-checkbox');
 
-	if (localStorageTheme !== null) {
-		doc.setAttribute('data-theme', localStorageTheme);
-		checkbox.checked = localStorageTheme === 'dark';
+    function setDarkTheme() {
+		doc.setAttribute('data-theme', 'dark');
+		localStorage.setItem('theme', 'dark');
+        checkbox.checked = true;
 	}
 
 	function toggle() {
@@ -20,4 +20,6 @@
 	if (checkbox) {
 		checkbox.addEventListener('change', toggle);
 	}
+
+    window.addEventListener('load', setDarkTheme);
 </script>
