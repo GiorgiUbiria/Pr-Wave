@@ -12,7 +12,6 @@ import Accordion from '../../../components/core/Accordion.astro';
 import { Container } from '@components/odyssey-theme';
 import Layout from '../../../layouts/Page.astro';
 import { courses } from './courses';
-import { syllabus } from './syllabus';
 
 const { info } = Astro.props;
 const seo = {
@@ -35,9 +34,9 @@ const seo = {
             <div class="middle-section">
                 <div class="info-section">
                     <div class="video-section">
-                        <div class="cube">
-                            Video
-                        </div>
+                        <video controls>
+                            <source src="" type="video/webm">
+                        </video>
                     </div>
                     <div class="details-section">
                         <div class="cubic_details">
@@ -56,7 +55,7 @@ const seo = {
                 <div class="syllabus-section">
                     <div class="syllabus">
                         <h3> კურსის სილაბუსი: </h3>
-                        {syllabus.map((day, index) => (
+                        {info.syllabus.map((day, index) => (
                             <Accordion day={day.day} content={day.content} hidden={index >= 9 ? 'hidden' : ''} open={index === 0 ? true : false} />
                         ))}
                         <button id="toggleButton">მეტის ჩვენება</button>
@@ -150,4 +149,8 @@ const seo = {
 			font-size: 48px;
 		}
 	}
+    video {
+        width: 100%;
+        height: auto;
+    }
 </style>
