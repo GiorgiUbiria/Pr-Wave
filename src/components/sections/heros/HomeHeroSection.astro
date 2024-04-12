@@ -9,9 +9,9 @@ import { Image } from 'astro:assets';
 	<div class="hero-section__text">
 		<h1>მოგესალმებით <span>PR WAVE</span>-ზე</h1>
 		<p>ყველაფერი სოციალურ მედიასა და მარკეტინგზე</p>
-        <div class="scrolldown">
-            <ScrollDown />
-        </div>
+		<div class="scrolldown">
+			<ScrollDown />
+		</div>
 	</div>
 	<Container>
 		<div class="hero-section__image">
@@ -30,7 +30,7 @@ import { Image } from 'astro:assets';
 
 <style>
 	.hero-section__section {
-        padding-top: 4rem;
+		padding-top: 4rem;
 		margin: var(--section-margin) auto;
 		min-height: clamp(90vh, 100vw, calc(100vh - var(--navbar-height)));
 		display: grid;
@@ -38,19 +38,19 @@ import { Image } from 'astro:assets';
 		align-items: center;
 		gap: 1rem;
 		padding-bottom: 4rem;
-        background-image: url('https://i.pinimg.com/originals/3e/9b/cc/3e9bcc4b353de0a027c7b106abdc3d3d.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        background-blend-mode: overlay;
-        background-color: rgba(0, 0, 0, 0.5);
-        background-attachment: fixed;
+		background-image: url('https://i.pinimg.com/originals/3e/9b/cc/3e9bcc4b353de0a027c7b106abdc3d3d.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		background-blend-mode: overlay;
+		background-color: rgba(0, 0, 0, 0.5);
+		background-attachment: fixed;
 		min-width: 100%;
 	}
 	.hero-section__text {
 		justify-self: center;
 		max-width: 25rem;
-        color: #fff;
+		color: #fff;
 	}
 	.hero-btns__container {
 		display: flex;
@@ -74,12 +74,12 @@ import { Image } from 'astro:assets';
 		.hero-section__section {
 			grid-template-columns: 1fr;
 		}
-        .hero-section__text{
-            text-align: center;
-        }
-        .scrolldown {
-            margin-left: 45%;
-        }
+		.hero-section__text {
+			text-align: center;
+		}
+		.scrolldown {
+			margin-left: 45%;
+		}
 	}
 
 	.hidden {

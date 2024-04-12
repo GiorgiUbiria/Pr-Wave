@@ -56,39 +56,39 @@ const seo = {
 	/>
 
 	<ThreeColumnTextSection>
-		<div slot="column-1-body" id="left-slide">
+		<div slot="column-1-body" class="provide" id="left-slide">
 			<h2>კურსი?</h2>
 			<p>
 				დიახ, სწავლება თანამედროვე მეთოდების გამოყენებით, მყუდრო
 				ატმოსფერო, 24/7 დახმარება. თუ გსურს ახალ დონეზე ასვლა, ეს კურსი
 				შენთვისაა.
 			</p>
+			<Button slot="column-1-cta" href="/company/courses">
+                გაიგეთ მეტი
+            </Button>
 		</div>
-		<Button slot="column-1-cta" href="/company/courses">
-			გაიგეთ მეტი
-		</Button>
-		<div slot="column-2-body">
+		<div slot="column-2-body" class="provide">
 			<h2>მასტერკლასები?</h2>
 			<p>
 				აუცილებლად, სწავლება თანამედროვე მეთოდების გამოყენებით, მყუდრო
 				ატმოსფერო, 24/7 დახმარება. თუ გსურს ახალ დონეზე ასვლა, ეს კურსი
 				შენთვისაა.
 			</p>
+			<Button slot="column-2-cta" outlined href="/company/masterclass">
+				გაიგეთ მეტი
+			</Button>
 		</div>
-		<Button slot="column-2-cta" outlined href="/company/masterclass">
-			გაიგეთ მეტი
-		</Button>
-		<div slot="column-3-body" id="right-slide">
+		<div slot="column-3-body" class="provide" id="right-slide">
 			<h2>სხვა სერვისები?</h2>
 			<p>
 				რა თქმა უნდა, სწავლება თანამედროვე მეთოდების გამოყენებით, მყუდრო
 				ატმოსფერო, 24/7 დახმარება. თუ გსურს ახალ დონეზე ასვლა, ეს კურსი
 				შენთვისაა.
 			</p>
+			<Button slot="column-3-cta" href="/company/services">
+				გაიგეთ მეტი
+			</Button>
 		</div>
-		<Button slot="column-3-cta" href="/company/services">
-			გაიგეთ მეტი
-		</Button>
 	</ThreeColumnTextSection>
 
 	<YouTubeEmbedSection
@@ -99,32 +99,31 @@ const seo = {
 	<StickyTextImageSection>
 		<div slot="text-container">
 			<h2>ჩვენ გთავაზობთ:</h2>
-            <hr />
+			<hr />
 			<h3>ინტერაქტიული კურსი</h3>
 			<p>
 				სწავლება თანამედროვე მეთოდების გამოყენებით, მყუდრო ატმოსფერო,
 				24/7 დახმარება. თუ გსურს ახალ დონეზე ასვლა, ეს კურსი შენთვისაა.
 			</p>
-            <hr />
+			<hr />
 			<h3>მასტერკლასები</h3>
 			<p>
 				სწავლება თანამედროვე მეთოდების გამოყენებით, მყუდრო ატმოსფერო,
 				24/7 დახმარება. თუ გსურს ახალ დონეზე ასვლა, ეს კურსი შენთვისაა.
 			</p>
-            <hr />
+			<hr />
 			<h3>სხვა სერვისები</h3>
 			<p>
 				სწავლება თანამედროვე მეთოდების გამოყენებით, მყუდრო ატმოსფერო,
 				24/7 დახმარება. თუ გსურს ახალ დონეზე ასვლა, ეს კურსი შენთვისაა.
 			</p>
-            <hr />
+			<hr />
 		</div>
 		<picture slot="image-container">
 			<Image
 				src={LandingHeroStickyImage}
 				alt="Pr Wave"
-				width="900"
-				height="600"
+                class="img"
 			/>
 		</picture>
 	</StickyTextImageSection>
@@ -189,6 +188,17 @@ const seo = {
 		grid-template-columns: repeat(2, 1fr);
 		gap: var(--theme-grid-gap);
 	}
+    .provide {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+    .img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 	@media (max-width: 768px) {
 		.feature-card__grid {
 			grid-template-columns: 1fr;
