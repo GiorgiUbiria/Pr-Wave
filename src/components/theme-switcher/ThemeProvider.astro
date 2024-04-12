@@ -5,21 +5,32 @@
 	const doc = document.firstElementChild;
 	const checkbox = document.querySelector('#hide-checkbox');
 
-    function setDarkTheme() {
-		doc.setAttribute('data-theme', 'dark');
-		localStorage.setItem('theme', 'dark');
-        checkbox.checked = true;
+	function setTheme(theme) {
+		doc.setAttribute('data-theme', theme);
+		localStorage.setItem('theme', theme);
+		if (theme === 'dark') {
+			checkbox.checked = true;
+		} else {
+			checkbox.checked = false;
+		}
 	}
 
 	function toggle() {
 		const theme = checkbox.checked ? 'dark' : 'ocean';
-		doc.setAttribute('data-theme', theme);
-		localStorage.setItem('theme', theme);
+		setTheme(theme);
 	}
 
+	// Check if the theme preference is already set in localStorage
+	const savedTheme = localStorage.getItem('theme');
+	if (savedTheme) {
+		setTheme(savedTheme); // Set the theme based on the saved preference
+	} else {
+		// Default to dark theme if no preference is saved
+		setTheme('dark');
+	}
+
+	// Add event listener to the checkbox
 	if (checkbox) {
 		checkbox.addEventListener('change', toggle);
 	}
-
-    window.addEventListener('load', setDarkTheme);
 </script>
