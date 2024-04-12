@@ -1,5 +1,5 @@
 ---
-const { label, name, options, required} = Astro.props;
+const { label, name, required} = Astro.props;
 ---
 
 <div class="form-field__container">
@@ -13,3 +13,11 @@ const { label, name, options, required} = Astro.props;
        არა
   </label>
 </div>
+
+<style>
+  .form-field__container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+</style>

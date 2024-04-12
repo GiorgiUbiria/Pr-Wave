@@ -2,23 +2,44 @@
 import {
 	Button,
 	FormInput,
-    FormTextarea,
-    FormRadio,
+	FormTextarea,
+	FormRadio,
 } from '@components/odyssey-theme';
 ---
 
 <form name="Contact Form" method="POST">
-	<FormInput required=true type="text" label="სახელი" name="Name" placeholder="John Doe" />
-	<FormInput required=true type="tel" label="ტელეფონის ნომერი" name="Phone" placeholder="+995 555 555 555" />
+    <h3>კურსზე რეგისტრაცია</h3>
+	<FormInput
+		required="true"
+		type="text"
+		label="სახელი"
+		name="Name"
+		placeholder="John Doe"
+	/>
+	<FormInput
+		required="true"
+		type="tel"
+		label="ტელეფონის ნომერი"
+		name="Phone"
+		placeholder="+995 555 555 555"
+	/>
 	<FormInput
 		type="email"
 		label="ელ. ფოსტა"
 		name="Email"
 		placeholder="template@example.com"
-        required=true
+		required="true"
 	/>
-    <FormRadio label="გაქვთ გამოცდილება სოციალური მედიის მართვის მიმართულებით?" required=true name="Experience" />
-    <FormTextarea label="მოკლედ მოგვიყევით,  რა მოლოდინი გაქვთ კურსიდან და სილაბუსის რომელი ნაწილი უფრო გაინტერესებთ  💙" name="Interest" placeholder="პასუხი..." />
+	<FormRadio
+		label="გაქვთ გამოცდილება სოციალური მედიის მართვის მიმართულებით?"
+		required="true"
+		name="Experience"
+	/>
+	<FormTextarea
+		label="მოკლედ მოგვიყევით,  რა მოლოდინი გაქვთ კურსიდან და სილაბუსის რომელი ნაწილი უფრო გაინტერესებთ  💙"
+		name="Interest"
+		placeholder="პასუხი..."
+	/>
 	<Button>რეგისტრაცია</Button>
 </form>
 
@@ -26,6 +47,9 @@ import {
 	form {
 		display: grid;
 		grid-template-columns: 1fr;
+        background-color: var(--theme-surface-1);
+        border-radius: var(--theme-shape-radius);
 		gap: 1rem;
+        padding: 1rem;
 	}
 </style>
