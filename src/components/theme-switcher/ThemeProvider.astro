@@ -20,16 +20,13 @@
 		setTheme(theme);
 	}
 
-	// Check if the theme preference is already set in localStorage
 	const savedTheme = localStorage.getItem('theme');
 	if (savedTheme) {
-		setTheme(savedTheme); // Set the theme based on the saved preference
+		setTheme(savedTheme);
 	} else {
-		// Default to dark theme if no preference is saved
 		setTheme('dark');
 	}
 
-	// Add event listener to the checkbox
 	if (checkbox) {
 		checkbox.addEventListener('change', toggle);
 	}
