@@ -4,6 +4,14 @@ export const nav = [
         slug: '/',
     },
     {
+        title: 'სერვისები',
+        slug: '/company/services',
+    },
+    {
+        title: 'კურსები',
+        slug: '/company/courses',
+    },
+    {
         title: 'ბლოგი',
         slug: '/blog',
     },
@@ -14,13 +22,5 @@ export const nav = [
     {
         title: 'კონტაქტი',
         slug: '/company/contact',
-    },
-    {
-        title: 'სერვისები',
-        slug: '/company/services',
-    },
-    {
-        title: 'კურსები',
-        slug: '/company/courses',
     },
 ];
