@@ -2,7 +2,7 @@ export const courses = [
     {
         title: "SMM PLUS | სოციალური მედიის მარკეტინგის კურსი",
         description: "SMM PLUS | სოციალური მედიის მარკეტინგის კურსის აღწერა",
-        url: "/company/courses/grdzeli",
+        url: "/company/courses/smm-plus",
         syllabus: [
             {
                 day: 1,
@@ -144,7 +144,7 @@ export const courses = [
     {
         title: "კონტენტ-მარკეტინგის ექსპრესს კურსი",
         description: "კონტენტ-მარკეტინგის ექსპრესს კურსის აღწერა",
-        url: "/company/courses/mokle",
+        url: "/company/courses/content-marketing",
         syllabus: [
             {
                 day: 1,
@@ -286,7 +286,7 @@ export const courses = [
     {
         title: "რეკლამირების ექსპრესს კურსი",
         description: "რეკლამირების ექსპრესს კურსის აღწერა",
-        url: "/company/courses/mokle-erteuli",
+        url: "/company/courses/express",
         syllabus: [
             {
                 day: 1,
