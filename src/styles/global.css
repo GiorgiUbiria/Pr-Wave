@@ -8,6 +8,7 @@ body {
 	margin: 0 auto;
 	background-color: var(--theme-bg);
 	position: relative;
+    transition: background-color 375ms ease;
 }
 
 pre {
