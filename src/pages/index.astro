@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Page.astro';
 import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro';
+import PartnersSection from '../components/sections/PartnersSection.astro';
 import { Icon } from 'astro-icon/components';
 import {
 	Button,
@@ -137,6 +138,10 @@ const seo = {
 			</Fragment></Button
 		>
 	</CtaCardSection>
+    <div class="partners">
+        <h2> პარტნიორები </h2>
+        <PartnersSection />
+    </div>
 </Layout>
 
 <script is:inline>
@@ -242,4 +247,11 @@ const seo = {
 			}
 		}
 	}
+    .partners {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 </style>

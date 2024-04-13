@@ -1,0 +1,146 @@
+---
+---
+
+<div class="marquee">
+	<ul class="marquee-content">
+		<li>
+			<img
+				src="https://images.vexels.com/media/users/3/142810/isolated/preview/ba0c22cef0e0d4a277d74333536482d9-shield-emblem-logo.png"
+			/>
+		</li>
+		<li>
+			<img
+				src="https://images.vexels.com/media/users/3/142810/isolated/preview/ba0c22cef0e0d4a277d74333536482d9-shield-emblem-logo.png"
+			/>
+		</li>
+		<li>
+			<img
+				src="https://images.vexels.com/media/users/3/142810/isolated/preview/ba0c22cef0e0d4a277d74333536482d9-shield-emblem-logo.png"
+			/>
+		</li>
+		<li>
+			<img
+				src="https://images.vexels.com/media/users/3/142810/isolated/preview/ba0c22cef0e0d4a277d74333536482d9-shield-emblem-logo.png"
+			/>
+		</li>
+		<li>
+			<img
+				src="https://images.vexels.com/media/users/3/142810/isolated/preview/ba0c22cef0e0d4a277d74333536482d9-shield-emblem-logo.png"
+			/>
+		</li>
+		<li>
+			<img
+				src="https://images.vexels.com/media/users/3/142810/isolated/preview/ba0c22cef0e0d4a277d74333536482d9-shield-emblem-logo.png"
+			/>
+		</li>
+		<li>
+			<img
+				src="https://images.vexels.com/media/users/3/142810/isolated/preview/ba0c22cef0e0d4a277d74333536482d9-shield-emblem-logo.png"
+			/>
+		</li>
+	</ul>
+</div>
+
+<script is:inline>
+	const root = document.documentElement;
+	const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue(
+		'--marquee-elements-displayed'
+	);
+	const marqueeContent = document.querySelector('ul.marquee-content');
+
+	root.style.setProperty(
+		'--marquee-elements',
+		marqueeContent.children.length
+	);
+
+	for (let i = 0; i < marqueeElementsDisplayed; i++) {
+		marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
+	}
+</script>
+
+<style>
+	:root {
+		--marquee-width: 73vw;
+		--marquee-height: 20vh;
+		--marquee-elements-displayed: 5;
+		--marquee-element-width: calc(
+			var(--marquee-width) / var(--marquee-elements-displayed)
+		);
+		--marquee-animation-duration: calc(var(--marquee-elements) * 3s);
+	}
+	.marquee {
+		margin-bottom: 2rem;
+		width: var(--marquee-width);
+		height: var(--marquee-height);
+		background-color: #111;
+		color: #eee;
+		overflow: hidden;
+		position: relative;
+		border-radius: var(--theme-shape-radius);
+	}
+	.marquee:before,
+	.marquee:after {
+		position: absolute;
+		top: 0;
+		width: 10rem;
+		height: 100%;
+		content: '';
+		z-index: 1;
+	}
+	.marquee:before {
+		left: 0;
+		background: linear-gradient(to right, #111 0%, transparent 100%);
+	}
+	.marquee:after {
+		right: 0;
+		background: linear-gradient(to left, #111 0%, transparent 100%);
+	}
+
+	.marquee-content {
+		list-style: none;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+		animation: scrolling var(--marquee-animation-duration) linear infinite;
+	}
+
+	@keyframes scrolling {
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(
+				calc(
+					-1 * var(--marquee-element-width) * var(--marquee-elements)
+				)
+			);
+		}
+	}
+
+	.marquee-content li {
+		flex-shrink: 0;
+		width: var(--marquee-element-width);
+		max-height: 100%;
+		text-align: center;
+		line-height: var(--marquee-height);
+	}
+
+	.marquee-content li img {
+		max-width: 50%;
+		max-height: 100%;
+		padding-bottom: 1.5rem;
+	}
+
+	@media (max-width: 600px) {
+		:root {
+			--marquee-width: 100vw;
+			--marquee-height: 16vh;
+			--marquee-elements-displayed: 3;
+		}
+		.marquee:before,
+		.marquee:after {
+			width: 5rem;
+		}
+	}
+</style>
