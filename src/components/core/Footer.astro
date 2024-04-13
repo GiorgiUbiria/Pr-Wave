@@ -11,10 +11,10 @@ const { footerSocials, copyrightName, background, color } =
 >
   <Container>
     <div class="footer-grid__container">
+      <div>
+        <slot name="logo" />
+      </div>
       <div class="footer-brand__container">
-        <div>
-          <slot name="logo" />
-        </div>
         <ul class="footer-socials__list">
           {
             footerSocials.map((social: any) => (
@@ -33,9 +33,9 @@ const { footerSocials, copyrightName, background, color } =
           }
         </ul>
       </div>
-    <div class="footer-copyright__container">
-      <p> &copy; {new Date().getFullYear()}. ყველა უფლება დაცულია | {copyrightName}</p>
-    </div>
+      <div class="footer-copyright__container">
+        <p> &copy; {new Date().getFullYear()}. ყველა უფლება დაცულია <span> | {copyrightName} </span></p>
+      </div>
   </Container>
 </footer>
 
@@ -43,7 +43,7 @@ const { footerSocials, copyrightName, background, color } =
   footer {
     --footer-bg: #1e293b;
     --footer-color: var(--theme-on-primary);
-    min-height: 27vh;
+    min-height: 29vh;
     background-color: var(--footer-bg);
     color: var(--footer-color);
     border-top-left-radius: var(--theme-shape-radius);
@@ -54,36 +54,34 @@ const { footerSocials, copyrightName, background, color } =
     flex-direction: column;
   }
   .footer-grid__container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
   }
   .footer-brand__container {
-    margin-bottom: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
+      margin: 1.5rem 0;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+   }
   .footer-socials__list {
-    margin-bottom: 0.5rem;
-    padding: 0;
-    display: flex;
-    list-style: none;
-    justify-content: center;
-  }
-  .footer-socials__item {
-    margin-right: 1rem;
-  }
+      margin-bottom: 0rem;
+      padding: 0;
+      width: 100%;
+      display: flex;
+      list-style: none;
+      justify-content: space-evenly;
+   }
   .footer-copyright__container p {
-    font-size: 0.75rem;
-      font-family: var(--theme-font-family-georgian-header)
-  }
+      font-size: 1rem;
+      font-family: var(--theme-font-family-georgian-header);
+   }
   .footer-socials__link svg {
-    width: 30px;
-    height: 30px;
+      width: 35px;
+      height: 35px;
   }
   @media (max-width: 768px) {
     .footer-grid__container {
